@@ -265,4 +265,17 @@ public function deleteAction($id)
     return $this->render('AKAkopenclassBundle:Advert:delete.html.twig');
     }
 
+public function menuAction()
+    {
+        // on fixe ici une liste en dur, mais bien entendu par la suite on récupère depuis la bdd
+    $listAdverts = array(
+        array('id' => 2, 'title' => 'recherche développeur Symfony'),
+        array('id' => 5, 'title' => 'Mission webmaster'),
+        array('id' => 9, 'title' => 'Offre de stage webdesigner')
+    );
+    return $this->render('AKAkopenclassBundle:Advert:menu.html.twig', array(
+        // tout l intérêt est ici ; le contrôleur passe les variables nécessaires au template
+        'listAdverts' => $listAdverts
+    ));
+    }
 }

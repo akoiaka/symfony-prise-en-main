@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Bienvenue sur ma page d ajour</title>
-</head>
-<body>
-<h1>Hello {{ nom }} !</h1>
+{% extends "AKAkopenclassBundle::layout.html.twig" %}
+{#ici on effectue un héritage#}
+
+{% block body %}
+<h2>Ajouter une annonce</h2>
+
+    {{ include("AKAkopenclassBundle:Advert:form.html.twig") }}
+{#ici on effectue une inclusion#}
+
 <p>
-   ADD PAGE - ici le Formulaire
+    Attention : cette annonce sera ajoutée directement sur la page d'accueil après validation du formulaire.
 </p>
-</body>
-</html>
+{#ANCIEN CODE (avant les include)#}
+
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+    {#<title>Bienvenue sur ma page d ajout</title>#}
+{#</head>#}
+{#<body>#}
+{#<h1>Hello {{ nom }} !</h1>#}
+{#<p>#}
+   {#ADD PAGE - ici le Formulaire#}
+{#</p>#}
+{#</body>#}
+{#</html>#}

@@ -2,10 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{%  block title %}OC Plateform{% endblock %}</title>
+    <title>
+        {%  block title %}
+            OC Plateforme
+        {% endblock %}</title>
 </head>
 <body>
+
+<div id="menu">
+    {{  render(controller("AKAkopenclassBundle:Advert:menu")) }}
+{#ici on effectue l inclusion d'un controleur qui va créer les variables dont il a besoin et les donner à #}
+{#son template pour etre ensuite inclus où on le veut.#}
+</div>
+
     {% block body %}
     {% endblock %}
+
 </body>
 </html>
