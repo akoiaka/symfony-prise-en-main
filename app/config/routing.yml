@@ -1,0 +1,7 @@
+ak_akopenclass:
+    resource: "@AKAkopenclassBundle/Resources/config/routing.yml"
+    prefix:   /
+
+oc_platform:
+    resource: "@AKAkopenclassBundle/Resources/config/routing.yml"
+    prefix: /platform

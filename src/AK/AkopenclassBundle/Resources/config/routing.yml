@@ -1,0 +1,66 @@
+
+page_2:
+    path:    /page_2
+    defaults:
+        _controller: AKAkopenclassBundle:Advert:page_2
+
+oc_platform_home:
+    path:    /{page}
+    defaults:
+        _controller: AKAkopenclassBundle:Advert:index
+        page:    1
+    requirements:
+        page: \d*
+
+oc_platform_view:
+    path:    /advert/{id}
+    defaults:
+        _controller: AKAkopenclassBundle:Advert:view
+    requirements:
+        id: \d+
+
+oc_platform_add:
+    path:    /add
+    defaults:
+        _controller: AKAkopenclassBundle:Advert:add
+
+oc_platform_edit:
+    path:    /edit/{id}
+    defaults:
+        _controller: AKAkopenclassBundle:Advert:edit
+    requirements:
+        id: \d+
+
+oc_platform_add:
+    path:    /delete/{id}
+    defaults:
+        _controller: AKAkopenclassBundle:Advert:delete
+    requirements:
+        id: \d+
+
+oc_platform_view_slug:
+    path:    /{year}/{slug}.{_format}
+    defaults:
+        _controller: AKAkopenclassBundle:Advert:viewSlug
+    requirements:
+        year:    \d{4}
+        format: html|xml
+
+
+
+#PARAMETRES
+#Le paramètre {_format}
+#Lorsqu'il est utilisé (comme notre paramètre{format}, ajoutez juste un underscore), alors un header avec leContent-typecorrespondant est ajouté à la réponse retournée. Exemple : vous appelez/platform/2014/webmaster.xml et le Kernel sait que la réponse retournée par le contrôleur est du XML, grâce au paramètre "_format" contenu dans la route.
+#Ainsi, avant d'envoyer la réponse à notre navigateur, le header Content-type: application/xml sera ajouté.
+#
+#Le paramètre {_locale}
+#Lorsqu'il est utilisé, il définit la langue dans laquelle l'utilisateur souhaite obtenir la page.
+#Ainsi, si vous avez défini des fichiers de traduction ou si vous employez des bundles qui en utilisent,
+#alors les traductions dans la langue du paramètre{_locale}seront chargées.
+#Pensez à mettre unrequirements:sur la valeur de ce paramètre pour éviter que vos utilisateurs ne demandent le russe
+#alors que votre site n'est que bilingue français-anglais.
+#
+#Le paramètre {_controller}
+#Eh oui, cette valeur que nous avons toujours mise dans le tableaudefaults n'est rien d'autre qu'un paramètre de route !
+#Évidemment, c'est un paramètre que nous ne mettons jamais dans lepath de nos routes
+
