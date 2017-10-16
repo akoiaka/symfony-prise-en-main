@@ -188,3 +188,17 @@ ff21db,127.0.0.1,GET,http://localhost:8000/platform/grenouille,1508146202,,404
 ba419a,127.0.0.1,GET,http://localhost:8000/platform/add,1508146244,,302
 facc1c,127.0.0.1,GET,http://localhost:8000/platform/advert/5,1508146246,,200
 b57bc8,127.0.0.1,GET,http://localhost:8000/platform/advert/5,1508146254,,200
+2ff926,127.0.0.1,GET,http://localhost:8000/platform/delete/5,1508154114,a6bc42,200
+a6bc42,127.0.0.1,GET,http://localhost:8000/platform/delete/5,1508154115,,404
+6f4bf0,127.0.0.1,GET,http://localhost:8000/platform/delete/0,1508154392,912a80,200
+912a80,127.0.0.1,GET,http://localhost:8000/platform/delete/0,1508154393,,404
+7111bc,127.0.0.1,GET,http://localhost:8000/platform/0,1508154418,0f49ef,200
+0f49ef,127.0.0.1,GET,http://localhost:8000/platform/0,1508154419,,500
+ccb982,127.0.0.1,GET,http://localhost:8000/platform/0,1508154738,128bc1,200
+128bc1,127.0.0.1,GET,http://localhost:8000/platform/0,1508154741,,500
+ef6998,127.0.0.1,GET,http://localhost:8000/platform/0,1508155062,b83073,200
+b83073,127.0.0.1,GET,http://localhost:8000/platform/0,1508155063,,404
+9ce8fa,127.0.0.1,GET,http://localhost:8000/platform/0,1508155083,644956,200
+644956,127.0.0.1,GET,http://localhost:8000/platform/0,1508155084,,404
+0bb6e0,127.0.0.1,GET,http://localhost:8000/platform/delete/5,1508155126,8ae917,200
+8ae917,127.0.0.1,GET,http://localhost:8000/platform/delete/5,1508155126,,404

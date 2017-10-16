@@ -7,22 +7,23 @@ namespace AK\AkopenclassBundle\Controller;
 // Ne pas oublier pas ce use :
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request; // inportant pour les Request
+use Symfony\Component\HttpFoundation\Request; // important pour les Request
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AdvertController extends Controller
 {
-    public function indexAction()
-
+    public function indexAction($page)
+//
     {
-        // SI ON VEUT GENERER UNE URL:
-        $url = $this->get('router')->generate(
-            'oc_platform_view', //1er argument : nom de la route
-            array('id' => 5) //2e argument : les valeurs des paramètres
-        );
-        // $url vaut "/platform/advert/5"
-        return new Response("l'URL de l'annonce d'id 5 est : .$url");
-    }
+//        // SI ON VEUT GENERER UNE URL:
+//        $url = $this->get('router')->generate(
+//            'oc_platform_view', //1er argument : nom de la route
+//            array('id' => 5) //2e argument : les valeurs des paramètres
+//        );
+//        // $url vaut "/platform/advert/5"
+//        return new Response("l'URL de l'annonce d'id 5 est : .$url");
+//    }
 
 //        Pour générer une URL absolue, lorsque vous l'envoyez par e-mail par exemple,
 //        il faut définir le troisième argument de la méthodegenerate  àUrlGeneratorInterface::ABSOLUTE_URL
@@ -40,7 +41,7 @@ class AdvertController extends Controller
 //          $url = $this->generateUrl('oc_platform_home');
 
 //          {# Dans une vue Twig, en considérant bien sûr que la variable advert_id est disponible #}
-            //<a href="{{ path('oc_platform_view', { 'id': advert_id }) }}">
+        //<a href="{{ path('oc_platform_view', { 'id': advert_id }) }}">
 //           Lien vers l'annonce d'id {{ advert_id }}
 //            </a>
 //        Penser à utiliser la fonction{{ path }}pour tous vos liens depuis vos templates
@@ -52,26 +53,50 @@ class AdvertController extends Controller
 //                ->render('AKAkopenclassBundle:Advert:index.html.twig', array('nom'=>'Akoi'));
 //        return new Response($content);
 ////        ICI ON RECUPERE LE CONTENU DU TEMPLATE
-//    }
 
-    public function page_2Action()
+// -------------   CRUD --------------------
 
-    {
-        $content = $this
-            ->get('templating')
-            ->render('AKAkopenclassBundle:Advert:page_2.html.twig', array('page'=>'ici la page 2'));
-        return new Response($content);
-//        ICI ON RECUPERE LE CONTENU DU TEMPLATE
+        // on ne sait pas combien de pages il y a
+        // mais on sait qu'une page doit etre supéruere ou égale à 1
+        if ($page < 1)
+        {
+            // on déclenche une exception NotFoundHttpException, cela va afficher une page d erreur 404
+            // on pourra personnaliser plus tard le message d erreur si on le souhaite
+            throw new NotFoundHttpException('Page "'. $page .'" inexistante.');
+        }
+        // personnaliser ses messages d'erreur:
+        //suivre ce lien: https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-symfony/personnaliser-les-pages-d-erreur-1
+
+        //Ici, on récupérera la liste des annonces, puis on la passera au template
+
+        // Mais pour l'instant, on ne fait qu'appeler le template
+        return $this->render('AKAkopenclassBundle:Advert:index.html.twig');
     }
+
+
+//
+//    public function page_2Action()
+//
+//    {
+//        $content = $this
+//            ->get('templating')
+//            ->render('AKAkopenclassBundle:Advert:page_2.html.twig', array('page'=>'ici la page 2'));
+//        return new Response($content);
+//        ICI ON RECUPERE LE CONTENU DU TEMPLATE
+//    }
 
     // La route fait appel à AKAkopenclassBundle:Advert:view,
     // on doit donc définir la méthode viewAction.
     // On donne à cette méthode l'argument $id, pour
     // correspondre au paramètre {id} de la route
 
-    public function viewAction($id, Request $request)
+    public function viewAction($id)
+//  Nous avions précédemment la public function comme ci-dessous
+//  public function viewAction($id, Request $request)
     {
-
+    return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
+        'id' => $id
+    ));
 //// --------------------------   C E S S I O N S ---------------------------
 ///
 //        Dans Symfony, il existe un objet Session qui permet de gérer la session,
@@ -91,7 +116,7 @@ class AdvertController extends Controller
 //        return new Response("<body> Page de Test</body>");
 
         //
-        // on peut aussi utiliser des ssesions flash pour annoncer un message bref à l'utilisateur du genre
+        // on peut aussi utiliser des sessions flash pour annoncer un message bref à l'utilisateur du genre
         // 'bienvenue, votre session a bien été créée" ou "votre annonce a bien été enregistrée"
         // message qui ne s affichera donc qu une seule fois puisque le message flash s'affiche et détruit de la session
         // MÉTHODE UTILISEE : addAction()
@@ -113,19 +138,19 @@ class AdvertController extends Controller
         // le typeint Request $request sert à récupérer la requete directement depuis le controleur dans l url qui sera saisie
 
         // on recupère ainsi le paramètre tag dans l url
-        $tag = $request->query->get('tag');
-//        return new Response("Vous venez de taper ".$id." dans l'adresse de l URL, avec le tag : ".$tag);
-        return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
-            'id' => $id,  // ICI ON GENERE NOS REPONSES AVEC THIS->RENDE()
-            'tag' => $tag,
-));
+//        $tag = $request->query->get('tag');
+////        return new Response("Vous venez de taper ".$id." dans l'adresse de l URL, avec le tag : ".$tag);
+//        return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
+//            'id' => $id,  // ICI ON GENERE NOS REPONSES AVEC THIS->RENDE()
+//            'tag' => $tag,
+//));
 
         // POUR EFFECTUER UNE RÉPONSE ET REDIRECTION :
 //        $url = $this->get('router')->generate('oc_platform_home');
 //        return new RedirectResponse($url);
 
         // RÉPONSE ET REDIRECTION AVEC UN CODE PLUS COURT
-        return $this->redirectToRoute('oc_platform_home');
+//        return $this->redirectToRoute('oc_platform_home');
 
         //ICI NOUS CREONS NOUS MEME UNE REPONSE EN JSON GRACE A LA FONCTION JSON_ENCODE()
 //        $response = new Response(json_encode(array('id' => $id)));
@@ -139,17 +164,17 @@ class AdvertController extends Controller
         // Pour savoir si la page a été récupérée
         // via GET (clic sur un lien) ou via POST (envoi d'un formulaire),
         // il existe la méthode$request->isMethod() :
-        if ($request->isMethod('POST'))
-        {
+//        if ($request->isMethod('POST'))
+//        {
             // Un formulaire a été envoyé, on peut le traiter ici
-        }
-
+//        }
+//
 
 //  SAVOIR SI LA REQUETE UTILISEE EST UNE REQUETE AJAX
-        if ($request->isXmlHttpRequest())
-        {
+//        if ($request->isXmlHttpRequest())
+//        {
     // C'est une requête AJAX, retournons du JSON, par exemple
-        }
+//        }
     }
 
     // ... et la méthode indexAction que nous avons déjà créée
@@ -212,7 +237,7 @@ public function addAction(Request $request)
         return $this->redirectToRoute('oc_platform-view', array('id' => 5));
     }
 
-    // si on est pas en POST alors on affiche le formiulaire
+    // si on est pas en POST alors on affiche le formulaire
     return $this->render('AKAkopenclassBundle:Advert:add.html.twig');
     }
 
