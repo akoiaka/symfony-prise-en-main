@@ -180,18 +180,64 @@ class AdvertController extends Controller
 
 public function addAction(Request $request)
 {
-    $session = $request->getSession();
+//    ------------------  MESSAGES FLASH ET SESSIONS FLASH  ---------------------
+//    $session = $request->getSession();
 
         // normalement on devrait réellement ajouter une annonce, mais ici on va faire comme si
-    $session->getFlashBag()->add('info', 'Annonce bien enregistree');
+//    $session->getFlashBag()->add('info', 'Annonce bien enregistree');
 
     // le FlashBag est ce qui contient les messages flash dans la session
     // Il peut bien sûr contenir plusieurs messages:
-    $session->getFlashBag()->add('info', 'Oui oui, elle est bien enregistrée!');
+//    $session->getFlashBag()->add('info', 'Oui oui, elle est bien enregistrée!');
 
     // puis on dirige vers la page de visualisation de cette annonce
-    return $this->redirectToRoute('oc_platform_view', array('id' => 5));
-}
+//    return $this->redirectToRoute('oc_platform_view', array('id' => 5));
 
+//    --------------------- /MESSAGES FLASH ET SESSIONS FLASH  ---------------------
+//    ---------------------     *********************              ------------------
+// -------------------- GESTION DE FORMULAIRES ---------------------
+
+    // ------------ ADD ---------- //
+
+    // PUBLIC FUNCTION ADD
+
+    //si la requete est en POST, c'est que le visiteur a soumis le formulaire
+    if ($request->isMethod('POST'))
+    {
+        // ici on s'occupera de la création et de la gestion du formulaire
+
+        $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistree.');
+
+        //Puis on redirige vers la page de visualisation de cette annonce
+        return $this->redirectToRoute('oc_platform-view', array('id' => 5));
+    }
+
+    // si on est pas en POST alors on affiche le formiulaire
+    return $this->render('AKAkopenclassBundle:Advert:add.html.twig');
+    }
+
+    //  ----------  EDIT -------------  //
+
+public function editAction($id, Request $request)
+    {
+        // ici on va récupérer l'annonce correspondant à $id
+
+        // même mécanisme que pour l'ajout
+        if ($request->isMethod('POST'))
+        {
+            $request->getSession()->getFlashBag()->add('notice', 'Annonce bien modifiée');
+            return $this->redirectToRoute('oc_platform_view', array('id' => 5));
+        }
+        return $this->render('AKAkopenclassBundle:Advert:edit.html.twig');
+    }
+
+    // ---------  DELETE ----------- //
+
+public function deleteAction($id)
+    {
+    // Ici, on récupèrera l'annonce correspondant à $id
+    // On gérera la suppression de l'annonce en question
+    return $this->render('AKAkopenclassBundle:Advert:delete.html.twig');
+    }
 
 }
