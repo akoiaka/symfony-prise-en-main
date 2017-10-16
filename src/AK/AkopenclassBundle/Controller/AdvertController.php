@@ -68,8 +68,40 @@ class AdvertController extends Controller
     // on doit donc définir la méthode viewAction.
     // On donne à cette méthode l'argument $id, pour
     // correspondre au paramètre {id} de la route
+
     public function viewAction($id, Request $request)
     {
+
+//// --------------------------   C E S S I O N S ---------------------------
+///
+//        Dans Symfony, il existe un objet Session qui permet de gérer la session,
+//       il se récupère depuis la requête. Depuis cet objet, vous disposez des méthodes
+//      get() et set() pour récupérer et définir des variables de session :
+
+// Récupération de la cession
+//        $session = $request->getSession();
+
+// Reécupérer le contenu de la variable user_id
+//        $userId = $session->get('user_id');
+
+// on définit une nouvelle valeur pour cette variable user_id
+//        $session->set('user_id', 100);
+
+// ne pas oublier ensuite de renvoyer une réponse
+//        return new Response("<body> Page de Test</body>");
+
+        //
+        // on peut aussi utiliser des ssesions flash pour annoncer un message bref à l'utilisateur du genre
+        // 'bienvenue, votre session a bien été créée" ou "votre annonce a bien été enregistrée"
+        // message qui ne s affichera donc qu une seule fois puisque le message flash s'affiche et détruit de la session
+        // MÉTHODE UTILISEE : addAction()
+        // VOIR LA METHODE CRÉE AVEC LA PUBLIC FUNCTION ADD ACTION CRÉÉE PLUS BAS
+
+
+// ------------------------   FIN DU CHAPITRE CESSIONS -----------------------
+
+
+
         // $id vaut 5 si l'on a appelé l'URL /platform/advert/5
 
         // Ici, on récupèrera depuis la base de données
@@ -131,12 +163,6 @@ class AdvertController extends Controller
             "On pourrait afficher l'annonce correspondant au
             slug '".$slug."', créée en ".$year." et au format ".$_format."."
         );
-    }
-}
-
-
-
-
 
 //on se place dans le namespace des contrôleurs de notre bundle
 //notre contrôleur va utiliser l'objetResponse, il faut donc le définir grâce au use
@@ -149,3 +175,23 @@ class AdvertController extends Controller
 //
 //La convention pour le nom du template est la même que pour le nom du contrôleur, souvenez-vous :
 //NomDuBundle:NomDuContrôleur:NomDeLAction . Puis, nous avons adapté la création de l'objetResponse pour lui passer notre nouvelle variable$content à la place de notre "Hello World" écrit à la main.
+    }
+
+
+public function addAction(Request $request)
+{
+    $session = $request->getSession();
+
+        // normalement on devrait réellement ajouter une annonce, mais ici on va faire comme si
+    $session->getFlashBag()->add('info', 'Annonce bien enregistree');
+
+    // le FlashBag est ce qui contient les messages flash dans la session
+    // Il peut bien sûr contenir plusieurs messages:
+    $session->getFlashBag()->add('info', 'Oui oui, elle est bien enregistrée!');
+
+    // puis on dirige vers la page de visualisation de cette annonce
+    return $this->redirectToRoute('oc_platform_view', array('id' => 5));
+}
+
+
+}

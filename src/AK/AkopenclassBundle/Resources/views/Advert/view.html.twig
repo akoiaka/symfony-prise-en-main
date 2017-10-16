@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Affichage de l'annonce {{ id }}</title>
 </head>
+
 <body>
-<h1>Hello annonce nº {{ id }}</h1>
-<p>Tag éventuel : {{ tag }}</p>
+    <h1>Voici l'affichagr de l'annonce nº {{ id }}</h1>
+    <p>Tag éventuel : {{ tag }}</p>
+{#------------------- CESSIONS FLASH -------------------------#}
+    <div>
+    {#On affiche ici tous les messages flash dont le nom est info#}
+        {% for message in app.session.flashbag.get('info') %}
+            <p>Message flash: {{ message }}</p>
+        {% endfor %}
+    </div>
+
+    <p>
+    Ici nous pourrons lire l'annonce ayant comme id: {{ id }}</br>
+    Mais pas pour l'instant .. ça va venir :)
+    </p>
+{#----------------- /CESSIONS FLASH -----------------------------#}
+
 </body>
+
 </html>
