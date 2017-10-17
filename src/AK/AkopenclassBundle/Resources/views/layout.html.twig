@@ -1,22 +1,45 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>
-        {%  block title %}
-            OC Plateforme
-        {% endblock %}</title>
-</head>
-<body>
+{% extends "::layout.html.twig" %}
 
-<div id="menu">
-    {{  render(controller("AKAkopenclassBundle:Advert:menu")) }}
-{#ici on effectue l inclusion d'un controleur qui va créer les variables dont il a besoin et les donner à #}
-{#son template pour etre ensuite inclus où on le veut.#}
-</div>
+{% block title %}
+    Annonces - {{ parent() }}
+{% endblock %}
 
-    {% block body %}
+{% block body %}
+
+    {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+    <h1>Annonces</h1>
+
+    <hr>
+
+    {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+    {% block ocplatform_body %}
     {% endblock %}
 
-</body>
-</html>
+{% endblock %}
+
+{#-------------------------------------------------#}
+
+{#ANCIEN CODE (AVANT DE SE LANCER ET CREER LE LAYOUT GENERAL AUI SE TROUVE MAINTENANT DANS APP/VIEWS/LAYOUT.HTML#}
+{#<!DOCTYPE HTML>#}
+
+{#<html>#}
+{#<head>#}
+    {#<meta charset="UTF-8">#}
+    {#<title>#}
+        {#{%  block title %}#}
+            {#OC Plateforme#}
+        {#{% endblock %}</title>#}
+{#</head>#}
+{#<body>#}
+
+{#<div id="menu">#}
+    {#{{  render(controller("AKAkopenclassBundle:Advert:menu")) }}#}
+{#ici on effectue l inclusion d'un controleur qui va créer les variables dont il a besoin et les donner à #}
+{#son template pour etre ensuite inclus où on le veut.#}
+{#</div>#}
+
+    {#{% block body %}#}
+    {#{% endblock %}#}
+
+{#</body>#}
+{#</html>#}

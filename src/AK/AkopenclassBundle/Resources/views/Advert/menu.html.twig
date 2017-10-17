@@ -2,11 +2,11 @@
 
 <ul class="nav nav-pills nav-stacked">
     {% for advert in listAdverts %}
-    <li>
-        <a href="{{ path('oc_platform_view', {'id': advert.id }) }}">
-        {{ advert.title }}
-        </a>
-    </li>Si cette inclusion de contrôleur s'avère bien pratique dans certains cas, attention cependant à l'impact en termes de performances. En effet, pour offrir cette flexibilité, Symfony déclenche une sous-requête en interne, c'est-à-dire que quasiment tout le processus d'une requête dans Symfony est exécuté à nouveau sur cette inclusion de contrôleur. A utiliser avec modération donc !
+        <li>
+            <a href="{{ path('oc_platform_view', {'id': advert.id}) }}">
+                {{ advert.title }}
+            </a>
+        </li>
     {% endfor %}
 </ul>
 

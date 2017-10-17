@@ -15,11 +15,11 @@ class __TwigTemplate_a9430141d65049272498f4d301c60ceb91d82b1e1ce89d8331659452c31
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a8839bfb10866747a35403f441e5dc410f1bcf4f896014149d30d9c4ff8164fa = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a8839bfb10866747a35403f441e5dc410f1bcf4f896014149d30d9c4ff8164fa->enter($__internal_a8839bfb10866747a35403f441e5dc410f1bcf4f896014149d30d9c4ff8164fa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:view.html.twig"));
+        $__internal_f393f830224f6eff21b8ff8b03628a3fa5410e1f74fba8528dfcc717faf5778e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_f393f830224f6eff21b8ff8b03628a3fa5410e1f74fba8528dfcc717faf5778e->enter($__internal_f393f830224f6eff21b8ff8b03628a3fa5410e1f74fba8528dfcc717faf5778e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:view.html.twig"));
 
-        $__internal_dde73bf4eb670d0c718c021ef97ff55f6328f26b04518a5eacee931a8d765eeb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_dde73bf4eb670d0c718c021ef97ff55f6328f26b04518a5eacee931a8d765eeb->enter($__internal_dde73bf4eb670d0c718c021ef97ff55f6328f26b04518a5eacee931a8d765eeb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:view.html.twig"));
+        $__internal_08770f61725c59c13316a8a98ffb373264b6438cd2a743ba1ed527b100dd53c0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_08770f61725c59c13316a8a98ffb373264b6438cd2a743ba1ed527b100dd53c0->enter($__internal_08770f61725c59c13316a8a98ffb373264b6438cd2a743ba1ed527b100dd53c0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:view.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -33,7 +33,7 @@ class __TwigTemplate_a9430141d65049272498f4d301c60ceb91d82b1e1ce89d8331659452c31
 </head>
 
 <body>
-    <h1>Voici l'affichagr de l'annonce nº ";
+    <h1>Voici l'affichage de l'annonce nº ";
         // line 9
         echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "html", null, true);
         echo "</h1>
@@ -74,10 +74,10 @@ class __TwigTemplate_a9430141d65049272498f4d301c60ceb91d82b1e1ce89d8331659452c31
 </html>
 ";
         
-        $__internal_a8839bfb10866747a35403f441e5dc410f1bcf4f896014149d30d9c4ff8164fa->leave($__internal_a8839bfb10866747a35403f441e5dc410f1bcf4f896014149d30d9c4ff8164fa_prof);
+        $__internal_f393f830224f6eff21b8ff8b03628a3fa5410e1f74fba8528dfcc717faf5778e->leave($__internal_f393f830224f6eff21b8ff8b03628a3fa5410e1f74fba8528dfcc717faf5778e_prof);
 
         
-        $__internal_dde73bf4eb670d0c718c021ef97ff55f6328f26b04518a5eacee931a8d765eeb->leave($__internal_dde73bf4eb670d0c718c021ef97ff55f6328f26b04518a5eacee931a8d765eeb_prof);
+        $__internal_08770f61725c59c13316a8a98ffb373264b6438cd2a743ba1ed527b100dd53c0->leave($__internal_08770f61725c59c13316a8a98ffb373264b6438cd2a743ba1ed527b100dd53c0_prof);
 
     }
 
@@ -114,7 +114,7 @@ class __TwigTemplate_a9430141d65049272498f4d301c60ceb91d82b1e1ce89d8331659452c31
 </head>
 
 <body>
-    <h1>Voici l'affichagr de l'annonce nº {{ id }}</h1>
+    <h1>Voici l'affichage de l'annonce nº {{ id }}</h1>
     <p>Tag éventuel : {{ tag }}</p>
 {#------------------- CESSIONS FLASH -------------------------#}
     <div>

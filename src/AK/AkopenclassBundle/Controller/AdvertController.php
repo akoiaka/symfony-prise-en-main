@@ -14,7 +14,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class AdvertController extends Controller
 {
     public function indexAction($page)
-//
     {
 //        // SI ON VEUT GENERER UNE URL:
 //        $url = $this->get('router')->generate(
@@ -68,35 +67,68 @@ class AdvertController extends Controller
         //suivre ce lien: https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-symfony/personnaliser-les-pages-d-erreur-1
 
         //Ici, on récupérera la liste des annonces, puis on la passera au template
-
+        // Notre liste d'annonce en dur
+        $listAdverts = array(
+            array(
+                'title'   => 'Recherche développpeur Symfony',
+                'id'      => 1,
+                'author'  => 'Alexandre',
+                'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
+                'date'    => new \Datetime()),
+            array(
+                'title'   => 'Mission de webmaster',
+                'id'      => 2,
+                'author'  => 'Hugo',
+                'content' => 'Nous recherchons un webmaster capable de maintenir notre site internet. Blabla…',
+                'date'    => new \Datetime()),
+            array(
+                'title'   => 'Offre de stage webdesigner',
+                'id'      => 3,
+                'author'  => 'Mathieu',
+                'content' => 'Nous proposons un poste pour webdesigner. Blabla…',
+                'date'    => new \Datetime())
+        );
         // Mais pour l'instant, on ne fait qu'appeler le template
-        return $this->render('AKAkopenclassBundle:Advert:index.html.twig');
+        return $this->render('AKAkopenclassBundle:Advert:index.html.twig', array(
+            'listAdverts' => $listAdverts,
+        ));
     }
 
 
-//
-//    public function page_2Action()
-//
-//    {
-//        $content = $this
-//            ->get('templating')
-//            ->render('AKAkopenclassBundle:Advert:page_2.html.twig', array('page'=>'ici la page 2'));
-//        return new Response($content);
-//        ICI ON RECUPERE LE CONTENU DU TEMPLATE
-//    }
 
-    // La route fait appel à AKAkopenclassBundle:Advert:view,
-    // on doit donc définir la méthode viewAction.
-    // On donne à cette méthode l'argument $id, pour
-    // correspondre au paramètre {id} de la route
+//
+    public function page_2Action()
+
+    {
+        $content = $this
+            ->get('templating')
+            ->render('AKAkopenclassBundle:Advert:page_2.html.twig', array('page'=>'ici la page 2'));
+        return new Response($content);
+//        ICI ON RECUPERE LE CONTENU DU TEMPLATE
+    }
+
+//     La route fait appel à AKAkopenclassBundle:Advert:view,
+//     on doit donc définir la méthode viewAction.
+//     On donne à cette méthode l'argument $id, pour
+//     correspondre au paramètre {id} de la route
 
     public function viewAction($id)
 //  Nous avions précédemment la public function comme ci-dessous
 //  public function viewAction($id, Request $request)
     {
-    return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
-        'id' => $id
-    ));
+        $advert = array(
+            'title'   => 'Recherche développpeur Symfony',
+            'id'      => $id,
+            'author'  => 'Alexandre',
+            'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
+            'date'    => new \Datetime()
+        );
+        return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
+            'advert' => $advert
+        ));
+//    return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
+//        'id' => $id
+//    ));
 //// --------------------------   C E S S I O N S ---------------------------
 ///
 //        Dans Symfony, il existe un objet Session qui permet de gérer la session,
@@ -181,13 +213,13 @@ class AdvertController extends Controller
 
     // On récupère tous les paramètres en arguments de la méthode
 
-    public function viewSlugAction($slug, $year, $_format)
-
-    {
-        return new Response(
-            "On pourrait afficher l'annonce correspondant au
-            slug '".$slug."', créée en ".$year." et au format ".$_format."."
-        );
+//    public function viewSlugAction($slug, $year, $_format)
+//
+//    {
+//        return new Response(
+//            "On pourrait afficher l'annonce correspondant au
+//            slug '".$slug."', créée en ".$year." et au format ".$_format."."
+//        );
 
 //on se place dans le namespace des contrôleurs de notre bundle
 //notre contrôleur va utiliser l'objetResponse, il faut donc le définir grâce au use
@@ -200,7 +232,7 @@ class AdvertController extends Controller
 //
 //La convention pour le nom du template est la même que pour le nom du contrôleur, souvenez-vous :
 //NomDuBundle:NomDuContrôleur:NomDeLAction . Puis, nous avons adapté la création de l'objetResponse pour lui passer notre nouvelle variable$content à la place de notre "Hello World" écrit à la main.
-    }
+//    }
 
 
 public function addAction(Request $request)
@@ -253,9 +285,18 @@ public function editAction($id, Request $request)
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien modifiée');
             return $this->redirectToRoute('oc_platform_view', array('id' => 5));
         }
-        return $this->render('AKAkopenclassBundle:Advert:edit.html.twig');
-    }
 
+$advert = array(
+'title'   => 'Recherche développpeur Symfony',
+'id'      => $id,
+'author'  => 'Alexandre',
+'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
+'date'    => new \Datetime()
+);
+return $this->render('AKAkopenclassBundle:Advert:edit.html.twig', array(
+'advert' => $advert
+));
+}
     // ---------  DELETE ----------- //
 
 public function deleteAction($id)
@@ -265,17 +306,17 @@ public function deleteAction($id)
     return $this->render('AKAkopenclassBundle:Advert:delete.html.twig');
     }
 
-public function menuAction()
+public function menuAction($limit)
     {
         // on fixe ici une liste en dur, mais bien entendu par la suite on récupère depuis la bdd
-    $listAdverts = array(
-        array('id' => 2, 'title' => 'recherche développeur Symfony'),
-        array('id' => 5, 'title' => 'Mission webmaster'),
-        array('id' => 9, 'title' => 'Offre de stage webdesigner')
-    );
-    return $this->render('AKAkopenclassBundle:Advert:menu.html.twig', array(
-        // tout l intérêt est ici ; le contrôleur passe les variables nécessaires au template
-        'listAdverts' => $listAdverts
-    ));
+        $listAdverts = array(
+            array('id' => 2, 'title' => 'Recherche développeur Symfony'),
+            array('id' => 5, 'title' => 'Mission de webmaster'),
+            array('id' => 9, 'title' => 'Offre de stage webdesigner')
+        );
+        return $this->render('AKAkopenclassBundle:Advert:menu.html.twig', array(
+            // Tout l'intérêt est ici : le contrôleur passe les variables nécessaires au template !
+            'listAdverts' => $listAdverts
+        ));
     }
 }

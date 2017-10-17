@@ -1,9 +1,4 @@
 
-page_2:
-    path:    /page_2
-    defaults:
-        _controller: AKAkopenclassBundle:Advert:page_2
-
 oc_platform_home:
     path:    /{page}
     defaults:

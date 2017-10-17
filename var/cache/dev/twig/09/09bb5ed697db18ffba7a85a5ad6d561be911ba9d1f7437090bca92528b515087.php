@@ -1,6 +1,6 @@
 <?php
 
-/* @WebProfiler/Profiler/open.css.twig */
+/* WebProfilerBundle:Profiler:open.css.twig */
 class __TwigTemplate_1e8481720787aecf4f8b803e07ede19a5df1bd1f77c939d23c9955e550ec7ba8 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,11 +15,11 @@ class __TwigTemplate_1e8481720787aecf4f8b803e07ede19a5df1bd1f77c939d23c9955e550e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e19c699890352c79f263d16b9ce0c931aefd194170b8f6f3f06c0e34869998c8 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_e19c699890352c79f263d16b9ce0c931aefd194170b8f6f3f06c0e34869998c8->enter($__internal_e19c699890352c79f263d16b9ce0c931aefd194170b8f6f3f06c0e34869998c8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/open.css.twig"));
+        $__internal_73003d216d31bfaacba6f7dbfa229265cbc65fb1732c38cee368f80c710fdb2f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_73003d216d31bfaacba6f7dbfa229265cbc65fb1732c38cee368f80c710fdb2f->enter($__internal_73003d216d31bfaacba6f7dbfa229265cbc65fb1732c38cee368f80c710fdb2f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:open.css.twig"));
 
-        $__internal_5206822d5d602bb8f0da53beb80f41d37e5e538474b53c035ada8548c03c0f0f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5206822d5d602bb8f0da53beb80f41d37e5e538474b53c035ada8548c03c0f0f->enter($__internal_5206822d5d602bb8f0da53beb80f41d37e5e538474b53c035ada8548c03c0f0f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/open.css.twig"));
+        $__internal_0dab12d61b27aca44d0719fd1f1ef0f7f7f13d97ba42c389cc17a18e1b33da0e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0dab12d61b27aca44d0719fd1f1ef0f7f7f13d97ba42c389cc17a18e1b33da0e->enter($__internal_0dab12d61b27aca44d0719fd1f1ef0f7f7f13d97ba42c389cc17a18e1b33da0e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:open.css.twig"));
 
         // line 3
         $context["mixins"] = array("break_long_words" => "-ms-word-break: break-all; word-break: break-all; word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;", "monospace_font" => "font-family: monospace; font-size: 13px; font-size-adjust: 0.5;", "sans_serif_font" => "font-family: Helvetica, Arial, sans-serif;", "subtle_border_and_shadow" => "background: #FFF; border: 1px solid #E0E0E0; box-shadow: 0px 0px 1px rgba(128, 128, 128, .2);");
@@ -90,16 +90,16 @@ a.doc:hover {
 }
 ";
         
-        $__internal_e19c699890352c79f263d16b9ce0c931aefd194170b8f6f3f06c0e34869998c8->leave($__internal_e19c699890352c79f263d16b9ce0c931aefd194170b8f6f3f06c0e34869998c8_prof);
+        $__internal_73003d216d31bfaacba6f7dbfa229265cbc65fb1732c38cee368f80c710fdb2f->leave($__internal_73003d216d31bfaacba6f7dbfa229265cbc65fb1732c38cee368f80c710fdb2f_prof);
 
         
-        $__internal_5206822d5d602bb8f0da53beb80f41d37e5e538474b53c035ada8548c03c0f0f->leave($__internal_5206822d5d602bb8f0da53beb80f41d37e5e538474b53c035ada8548c03c0f0f_prof);
+        $__internal_0dab12d61b27aca44d0719fd1f1ef0f7f7f13d97ba42c389cc17a18e1b33da0e->leave($__internal_0dab12d61b27aca44d0719fd1f1ef0f7f7f13d97ba42c389cc17a18e1b33da0e_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "@WebProfiler/Profiler/open.css.twig";
+        return "WebProfilerBundle:Profiler:open.css.twig";
     }
 
     public function isTraitable()
@@ -192,6 +192,6 @@ a.doc:hover {
     top: -7em;
     visibility: hidden;
 }
-", "@WebProfiler/Profiler/open.css.twig", "/Applications/MAMP/htdocs/symphony/my_project_name/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/open.css.twig");
+", "WebProfilerBundle:Profiler:open.css.twig", "/Applications/MAMP/htdocs/symphony/symfony-prise-en-main/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/open.css.twig");
     }
 }

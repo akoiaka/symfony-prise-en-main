@@ -104,11 +104,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         elseif (0 === strpos($pathinfo, '/platform')) {
-            // page_2
-            if ('/platform/page_2' === $pathinfo) {
-                return array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::page_2Action',  '_route' => 'page_2',);
-            }
-
             // oc_platform_home
             if (preg_match('#^/platform(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_home')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::indexAction',  'page' => 1,));
