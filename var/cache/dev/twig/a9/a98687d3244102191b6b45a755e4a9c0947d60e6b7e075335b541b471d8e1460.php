@@ -15,11 +15,11 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_095f11a7666f8237c358438b5de18641588f0442c195b3c84e17c2fd2359a599 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_095f11a7666f8237c358438b5de18641588f0442c195b3c84e17c2fd2359a599->enter($__internal_095f11a7666f8237c358438b5de18641588f0442c195b3c84e17c2fd2359a599_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
+        $__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a->enter($__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
 
-        $__internal_37c06e9d755de3ac959ef298fab018197dbc0afcf47f22cab28819da29cfcf8e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_37c06e9d755de3ac959ef298fab018197dbc0afcf47f22cab28819da29cfcf8e->enter($__internal_37c06e9d755de3ac959ef298fab018197dbc0afcf47f22cab28819da29cfcf8e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
+        $__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd->enter($__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
 
         // line 4
         echo "
@@ -29,14 +29,17 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
         // line 8
         echo "
 <div class=\"well\">
-    Ici se trouvera le formulaire.
+";
+        // line 10
+        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
+        echo "
 </div>
 ";
         
-        $__internal_095f11a7666f8237c358438b5de18641588f0442c195b3c84e17c2fd2359a599->leave($__internal_095f11a7666f8237c358438b5de18641588f0442c195b3c84e17c2fd2359a599_prof);
+        $__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a->leave($__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a_prof);
 
         
-        $__internal_37c06e9d755de3ac959ef298fab018197dbc0afcf47f22cab28819da29cfcf8e->leave($__internal_37c06e9d755de3ac959ef298fab018197dbc0afcf47f22cab28819da29cfcf8e_prof);
+        $__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd->leave($__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd_prof);
 
     }
 
@@ -45,9 +48,14 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
         return "AKAkopenclassBundle:Advert:form.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  30 => 8,  25 => 4,);
+        return array (  34 => 10,  30 => 8,  25 => 4,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -69,7 +77,7 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 {#on complétera ultérieurement avec le form#}
 
 <div class=\"well\">
-    Ici se trouvera le formulaire.
+{{  form(form) }}
 </div>
 ", "AKAkopenclassBundle:Advert:form.html.twig", "/Applications/MAMP/htdocs/symphony/symfony-prise-en-main/src/AK/AkopenclassBundle/Resources/views/Advert/form.html.twig");
     }

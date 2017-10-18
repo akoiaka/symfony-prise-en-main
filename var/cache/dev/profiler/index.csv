@@ -33,3 +33,13 @@ bcaafc,127.0.0.1,GET,http://localhost:8000/platform/add,1508332588,083193,200
 365f01,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508332745,5873d9,200
 23f233,127.0.0.1,GET,http://localhost:8000/platform/advert/5,1508332749,5873d9,200
 5873d9,127.0.0.1,GET,http://localhost:8000/platform/advert/5,1508332749,,500
+ed28b7,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508334371,4db533,200
+6e3404,127.0.0.1,GET,http://localhost:8000/platform/advert/2,1508334378,4db533,200
+4db533,127.0.0.1,GET,http://localhost:8000/platform/advert/2,1508334378,,500
+9d15f8,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508334442,b664d8,200
+b664d8,127.0.0.1,GET,http://localhost:8000/platform/add,1508334442,,200
+5c3e1f,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508334630,5ab9fa,200
+5ab9fa,127.0.0.1,GET,http://localhost:8000/platform/add,1508334632,,200
+d4aa86,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508334983,ccbb00,200
+a8aa50,127.0.0.1,GET,http://localhost:8000/platform/advert/5,1508334988,ccbb00,200
+ccbb00,127.0.0.1,GET,http://localhost:8000/platform/advert/5,1508334988,,500
