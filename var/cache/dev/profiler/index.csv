@@ -41,3 +41,17 @@ f69d64,127.0.0.1,GET,http://localhost:8000/platform/edit/5,1508247745,,500
 bdd0c8,127.0.0.1,GET,http://localhost:8000/platform/edit/5,1508247782,,200
 5f2145,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508248272,2582d2,200
 2582d2,127.0.0.1,GET,http://localhost:8000/platform,1508248272,,200
+669d04,127.0.0.1,GET,http://localhost:8000/platform/edit,1508248739,d4448e,200
+d4448e,127.0.0.1,GET,http://localhost:8000/platform/edit,1508248739,,404
+2b2cea,127.0.0.1,GET,http://localhost:8000/platform/edit,1508248772,e8e14e,200
+e8e14e,127.0.0.1,GET,http://localhost:8000/platform/edit,1508248772,,404
+5d6fca,127.0.0.1,GET,http://localhost:8000/platform/edit/5,1508248789,7335cf,200
+7335cf,127.0.0.1,GET,http://localhost:8000/platform/edit/5,1508248789,,500
+127753,127.0.0.1,GET,http://localhost:8000/platform/edit/1,1508248798,454ace,200
+454ace,127.0.0.1,GET,http://localhost:8000/platform/edit/1,1508248798,,500
+199873,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508250556,286e5e,200
+286e5e,127.0.0.1,GET,http://localhost:8000/platform,1508250556,,200
+9b79ba,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508250562,99fea2,200
+99fea2,127.0.0.1,GET,http://localhost:8000/platform/add,1508250562,,200
+f92050,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508250623,97da96,200
+97da96,127.0.0.1,GET,http://localhost:8000/platform/add,1508250623,,200

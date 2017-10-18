@@ -113,29 +113,43 @@ class AdvertController extends Controller
 //     correspondre au paramètre {id} de la route
 
     public function viewAction($id)
+// ce nouveau viewAction ci-dessus (sans $id) remplace l'ancien ci-dessous du moment ou nous créons officiellemet
+// l'objet Advert - avec ses commentaires (ANNOTATIONS)
+//    public function viewAction($id)
 //  Nous avions précédemment la public function comme ci-dessous
 //  public function viewAction($id, Request $request)
     {
-        $advert = array(
-            'title'   => 'Recherche développpeur Symfony',
-            'id'      => $id,
-            'author'  => 'Alexandre',
-            'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
-            'date'    => new \Datetime()
-        );
+        // CI DESSOUS CREATION DE L OBJET ADVERT
+        $advert = new Advert;
+        $advert->setContent("Recherche développeur Symfony3.");
+
         return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
             'advert' => $advert
         ));
+
+//        ------- le advert ci-dessous était un tableau ficitif avant l utilisation de la bdd -----
+//        $advert = array(
+//            'title'   => 'Recherche développpeur Symfony',
+//            'id'      => $id,
+//            'author'  => 'Alexandre',
+//            'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
+//            'date'    => new \Datetime()
+//        );
+        //        ------- le advert ci-dessus était un tableau ficitif avant l utilisation de la bdd -----
+
+//        return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
+//            'advert' => $advert
+//        ));
 //    return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
 //        'id' => $id
 //    ));
-//// --------------------------   C E S S I O N S ---------------------------
+//// --------------------------   S E S S I O N S ---------------------------
 ///
 //        Dans Symfony, il existe un objet Session qui permet de gérer la session,
 //       il se récupère depuis la requête. Depuis cet objet, vous disposez des méthodes
 //      get() et set() pour récupérer et définir des variables de session :
 
-// Récupération de la cession
+// Récupération de la session
 //        $session = $request->getSession();
 
 // Reécupérer le contenu de la variable user_id
