@@ -18,6 +18,9 @@ oc_platform_add:
     path:    /add
     defaults:
         _controller: AKAkopenclassBundle:Advert:add
+        requirements:
+                id: \d+
+
 
 oc_platform_edit:
     path:    /edit/{id}

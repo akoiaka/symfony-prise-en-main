@@ -116,7 +116,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             // oc_platform_add
             if ('/platform/add' === $pathinfo) {
-                return array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::addAction',  '_route' => 'oc_platform_add',);
+                return array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::addAction',  'requirements' =>   array (    'id' => '\\d+',  ),  '_route' => 'oc_platform_add',);
             }
 
             // oc_platform_edit

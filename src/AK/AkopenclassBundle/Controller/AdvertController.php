@@ -1,7 +1,5 @@
 <?php
 
-// src/OC/PlatformBundle/Controller/AdvertController.php
-
 namespace AK\AkopenclassBundle\Controller;
 
 // Ne pas oublier pas ce use :
@@ -10,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request; // important pour les Request
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
+use AK\AkopenclassBundle\Entity\Advert;
 class AdvertController extends Controller
 {
     public function indexAction($page)
@@ -120,7 +118,7 @@ class AdvertController extends Controller
 //  public function viewAction($id, Request $request)
     {
         // CI DESSOUS CREATION DE L OBJET ADVERT
-        $advert = new Advert;
+        $advert = new Advert();
         $advert->setContent("Recherche développeur Symfony3.");
 
         return $this->render('AKAkopenclassBundle:Advert:view.html.twig', array(
@@ -251,6 +249,26 @@ class AdvertController extends Controller
 
 public function addAction(Request $request)
 {
+    //  -----------------   CREATION DE L ENTITE ---------------
+    $advert = new Advert();
+    $advert->setTitle('Recherche développeur Symfony2.');
+    $advert->setAuthor('Akoi');
+    $advert->setContent(" nous recherchons un dev junior sympa et bla bla bla ..");
+//    On peut ne pas définir ni la date ni la publication //
+//    car ces attributs sont définis automatiquement dans le constructeur//
+//                                  ----
+//    -------------------------------- RECUPERATION DE L ENTITY MANAGER  ----------------------------
+    $em = $this->getDoctrine()->getManager();
+    // ------------------   Etape 1: ON PERSISTE L ENTITÉ ----------------
+    $em->persist($advert);
+    // ------------------  Etape 2:  ON FLUSH TOUT CE QUI A ETE PERSISTÉ AVANT -------
+    $em->flush();
+
+    // ---------------- ENSUITE LA METHODE QUE NOUS AVIONS DEJA ECRITE  ----------
+    // ---------------------- IF REQUEST ISMETHOD ... (VOIR PLUS BAS)---------------
+
+
+
 //    ------------------  MESSAGES FLASH ET SESSIONS FLASH  ---------------------
 //    $session = $request->getSession();
 
@@ -277,10 +295,14 @@ public function addAction(Request $request)
     {
         // ici on s'occupera de la création et de la gestion du formulaire
 
-        $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistree.');
+        $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
 
         //Puis on redirige vers la page de visualisation de cette annonce
-        return $this->redirectToRoute('oc_platform-view', array('id' => 5));
+//        return $this->redirectToRoute('oc_platform-view', array('id' => 5));
+        return $this->redirectToRoute('oc_platform_view', array('id' => $advert->getId()));
+        // on peut récupérer maintenant l id de la l enregistrement en base et non plus un nombre fixe
+//        comme précédemment car nous avons ecrit en base avec Doctrine, avec Flush
+
     }
 
     // si on est pas en POST alors on affiche le formulaire
