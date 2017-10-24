@@ -15,11 +15,11 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a->enter($__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
+        $__internal_1f501e4bab2f3e9c1a0789549a22ee913b3f800bc696bcaf1d9cb199190bd308 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_1f501e4bab2f3e9c1a0789549a22ee913b3f800bc696bcaf1d9cb199190bd308->enter($__internal_1f501e4bab2f3e9c1a0789549a22ee913b3f800bc696bcaf1d9cb199190bd308_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
 
-        $__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd->enter($__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
+        $__internal_f274a6df84a9381c871162dff2a7d840578605085dbbef6def7b859bf8a1ef9f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f274a6df84a9381c871162dff2a7d840578605085dbbef6def7b859bf8a1ef9f->enter($__internal_f274a6df84a9381c871162dff2a7d840578605085dbbef6def7b859bf8a1ef9f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
 
         // line 4
         echo "
@@ -28,18 +28,59 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 ";
         // line 8
         echo "
-<div class=\"well\">
-";
-        // line 10
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
+<div class=\"container\">
+    <div class=\"form-group row has-success\">
+        ";
+        // line 11
+        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
-</div>
-";
+            <div class=\"col-sm10\">
+                ";
+        // line 13
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "date", array()), 'row');
+        echo "
+            </div>
+            <div class=\"col-sm10\">
+                ";
+        // line 16
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "title", array()), 'row');
+        echo "
+            </div>
+            <div class=\"col-sm10\">
+                ";
+        // line 19
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "content", array()), 'row');
+        echo "
+            </div>
+             <div class=\"col-sm10\">
+                ";
+        // line 22
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "author", array()), 'row');
+        echo "
+            </div>
+            <div class=\"col-sm10\">
+                ";
+        // line 25
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "published", array()), 'row');
+        echo "
+            </div>
+            <div class=\"col-sm10\">
+                ";
+        // line 28
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "save", array()), 'row');
+        echo "
+            </div>
+        ";
+        // line 30
+        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
+        echo "
+    </div>
+</div>";
         
-        $__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a->leave($__internal_dcc0200a1a39a5b15c40cf0aeb7c8b523687d6556da7163ea95052a5437b875a_prof);
+        $__internal_1f501e4bab2f3e9c1a0789549a22ee913b3f800bc696bcaf1d9cb199190bd308->leave($__internal_1f501e4bab2f3e9c1a0789549a22ee913b3f800bc696bcaf1d9cb199190bd308_prof);
 
         
-        $__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd->leave($__internal_ad733e95db7579a813af277d1af84482395c31b958363a5686ca2fd0df8d66cd_prof);
+        $__internal_f274a6df84a9381c871162dff2a7d840578605085dbbef6def7b859bf8a1ef9f->leave($__internal_f274a6df84a9381c871162dff2a7d840578605085dbbef6def7b859bf8a1ef9f_prof);
 
     }
 
@@ -55,7 +96,7 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 
     public function getDebugInfo()
     {
-        return array (  34 => 10,  30 => 8,  25 => 4,);
+        return array (  75 => 30,  70 => 28,  64 => 25,  58 => 22,  52 => 19,  46 => 16,  40 => 13,  35 => 11,  30 => 8,  25 => 4,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -76,9 +117,29 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 
 {#on complétera ultérieurement avec le form#}
 
-<div class=\"well\">
-{{  form(form) }}
-</div>
-", "AKAkopenclassBundle:Advert:form.html.twig", "/Applications/MAMP/htdocs/symphony/symfony-prise-en-main/src/AK/AkopenclassBundle/Resources/views/Advert/form.html.twig");
+<div class=\"container\">
+    <div class=\"form-group row has-success\">
+        {{ form_start(form) }}
+            <div class=\"col-sm10\">
+                {{ form_row(form.date) }}
+            </div>
+            <div class=\"col-sm10\">
+                {{ form_row(form.title) }}
+            </div>
+            <div class=\"col-sm10\">
+                {{ form_row(form.content) }}
+            </div>
+             <div class=\"col-sm10\">
+                {{ form_row(form.author) }}
+            </div>
+            <div class=\"col-sm10\">
+                {{ form_row(form.published) }}
+            </div>
+            <div class=\"col-sm10\">
+                {{ form_row(form.save) }}
+            </div>
+        {{ form_end(form) }}
+    </div>
+</div>", "AKAkopenclassBundle:Advert:form.html.twig", "/Applications/MAMP/htdocs/symphony/symfony-prise-en-main/src/AK/AkopenclassBundle/Resources/views/Advert/form.html.twig");
     }
 }

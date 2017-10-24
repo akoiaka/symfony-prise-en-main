@@ -267,7 +267,7 @@ public function addAction(Request $request)
         ->add('title',     TextType::class)
         ->add('content',   TextareaType::class)
         ->add('author',    TextType::class)
-        ->add('published', CheckboxType::class)
+        ->add('published', CheckboxType::class, array('required' => false))
         ->add('save',      SubmitType::class)
     ;
     // Pour l'instant, pas de candidatures, catégories, etc., on les gérera plus tard
@@ -281,8 +281,20 @@ public function addAction(Request $request)
     return $this->render('AKAkopenclassBundle:Advert:add.html.twig', array(
 
         'form' => $form->createView(),
-
     ));
+
+
+    // --- ESSAI PROVISOIRE FORM MERCREDI 18 SOIR  ---
+//    if ($form->isValid()) {
+//        // On enregistre notre objet $advert dans la base de données, par exemple
+//        $em = $this->getDoctrine()->getManager();
+//        $em->persist($advert);
+//        $em->flush();
+//        $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+//        // On redirige vers la page de visualisation de l'annonce nouvellement créée
+//        return $this->redirectToRoute('oc_platform_view', array('id' => $advert->getId()));
+//    }
+    // ------ FIN DE L ESSAI PROVISOIRE ----
 
 
 
