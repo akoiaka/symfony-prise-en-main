@@ -91,3 +91,9 @@ cd0356,127.0.0.1,GET,http://localhost:8000/platform/1,1508399333,,200
 e3b9ed,127.0.0.1,GET,http://localhost:8000/platform/1,1508835307,,200
 49bf24,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508835312,df258b,200
 df258b,127.0.0.1,GET,http://localhost:8000/platform/add,1508835313,,200
+5f425c,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508836125,2770da,200
+2770da,127.0.0.1,GET,http://localhost:8000/platform/add,1508836126,,200
+0673ad,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508836180,50d2d2,200
+50d2d2,127.0.0.1,POST,http://localhost:8000/platform/add,1508836181,,200
+711f88,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Dfr%26_controller%3DAKAkopenclassBundle%253AAdvert%253Amenu,1508836203,f15df4,200
+f15df4,127.0.0.1,POST,http://localhost:8000/platform/add,1508836203,,200
