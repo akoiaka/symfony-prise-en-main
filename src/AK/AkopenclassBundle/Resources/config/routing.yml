@@ -5,7 +5,7 @@ oc_platform_home:
         _controller: AKAkopenclassBundle:Advert:index
         page:    1
     requirements:
-        page: \d*
+        page: \d+
 
 oc_platform_view:
     path:    /advert/{id}
@@ -26,8 +26,8 @@ oc_platform_edit:
     path:    /edit/{id}
     defaults:
         _controller: AKAkopenclassBundle:Advert:edit
-    requirements:
-        id: \d+
+        requirements:
+                id: \d+
 
 oc_platform_add:
     path:    /delete/{id}
@@ -43,7 +43,6 @@ oc_platform_view_slug:
     requirements:
         year:    \d{4}
         format: html|xml
-
 
 
 #PARAMETRES

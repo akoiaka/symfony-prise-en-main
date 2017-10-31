@@ -2,59 +2,43 @@
 
 namespace AK\AkopenclassBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
-/**
+    /**
  * Advert
  *
  * @ORM\Table(name="advert")
  * @ORM\Entity(repositoryClass="AK\AkopenclassBundle\Repository\AdvertRepository")
  */
+/**
+
+ * @ORM\OneToOne(targetEntity="AK\AkopenclassBundle\Entity\Image", cascade={"persist"})
+
+ */
+
 class Advert
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
     private $id;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="datetime")
-     */
     private $date;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=255)
-     */
     private $title;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="author", type="string", length=255)
-     */
     private $author;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content", type="string", length=255)
-     */
     private $content;
-
-    /**
-     * @ORM\Column(name="published", type="boolean")
-     */
     private $published = true;
+    private $image;
+    private $categories;
+    private $applications;
+    private $updatedAt;
+    private $nbApplications = 0;
+    private $slug;
 
 
+    public function __construct()
+
+    {
+        $this->date = new \Datetime();
+        $this->categories = new ArrayCollection();
+        $this->applications = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -66,35 +50,7 @@ class Advert
         return $this->id;
     }
 
-    /**
-     * Set date
-     *
-     * @param \DateTime $date
-     *
-     * @return Advert
-     */
-    public function __construct()
-    {
-       // Par défaut, la date de l'annonce est la date d'aujourd'hui
-        $this->date = new \Datetime();
-    }
 
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
 
     /**
      * Set title
@@ -190,5 +146,16 @@ class Advert
     public function getPublished()
     {
         return $this->published;
+    }
+
+    public function setImage(Image $image = null)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+
     }
 }

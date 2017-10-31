@@ -15,20 +15,20 @@ class __TwigTemplate_e09439485fd92348fca1f0fe86d090d2f5c55c12fa8804fd5e117fc0f44
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7f3f6cf08bd16171d23ba14500ed3621ce5e9967bed03a7b04b9d926ca17301d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7f3f6cf08bd16171d23ba14500ed3621ce5e9967bed03a7b04b9d926ca17301d->enter($__internal_7f3f6cf08bd16171d23ba14500ed3621ce5e9967bed03a7b04b9d926ca17301d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/favicon.png.base64"));
+        $__internal_0df0d8b7521fec5178d755653e24ab3564225ef95511709686df7fdc4a8a0304 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0df0d8b7521fec5178d755653e24ab3564225ef95511709686df7fdc4a8a0304->enter($__internal_0df0d8b7521fec5178d755653e24ab3564225ef95511709686df7fdc4a8a0304_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/favicon.png.base64"));
 
-        $__internal_3ebddcf87477b5f270ae51e69bbd2214cd00ced785cdf486e546e79956ea7ceb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3ebddcf87477b5f270ae51e69bbd2214cd00ced785cdf486e546e79956ea7ceb->enter($__internal_3ebddcf87477b5f270ae51e69bbd2214cd00ced785cdf486e546e79956ea7ceb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/favicon.png.base64"));
+        $__internal_c974942a34a3e9a7049b32c444497180f6e2f1d7be4254b5444529ef64da7525 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c974942a34a3e9a7049b32c444497180f6e2f1d7be4254b5444529ef64da7525->enter($__internal_c974942a34a3e9a7049b32c444497180f6e2f1d7be4254b5444529ef64da7525_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/favicon.png.base64"));
 
         // line 1
         echo "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAgCAYAAAABtRhCAAADVUlEQVRIx82XX0jTURTHLYPyqZdefQx66CEo80+aYpoIkqzUikz6Z5klQoWUWYRIJYEUGpQ+lIr9U5dOTLdCtkmWZis3rbnC5fw/neYW002307mX/cZvP3/7o1PwwOdh95x7vnf39zvnd29AgBer2xO6DclAXiMqZAqxIiNIN/IYSUS2BPhjmGATchUxI+ADWiRhpWK7HKuHFVBFdmU5YvnI4grFGCaReF/EBH4KsZlGgj2JBTuCYBWRIYF8YoEOJ6wBt/gEs7mBbyOjQXruPLSdOgPCiEiPSUUHDoL8Ug5IUo9B/d5wrt+G7OAKNrODPuVdB6vRCIzN6SdBlpW9RIgk/1FeAXabzRlrUPVCS/JhbmwudztnGeeH9AyXBIwtmM3wLinZJZHifjHw2V+NBoRh+9ixQrbgbnaSIcl7cGea6hoXQbNe7za241oeO5Z0p42M4BV2EqP2D50wo+6HzvwC6C4sApNOR8cmOrtcnhtj2kYRyC9eBvXzKrBZrXSs72kFd1t3MoKVbMekQkEnSNKOO8fac3LpmK6l1TlGtsxmsdKFsecPYgwxst0cwROMYDXboSotg0WLBRqjY51jLYcENElXwW2XJKPydvoI2GN9T8rBtrAArYIUruBJXkFheCQYlCpQP6uk5dAQFQNaUROMSGVQFxLmkoQsxDJrhLbTZ+nvVsERME9MgPJRKV/58AsyomTSzE813WLFvWK++qI0xSfQl8k8Pg46sYRuv5t6dS+4RqxDwaa4BGjYH+NTQvKScIp9+YL/hoZh3jDtLRHtt2C3g6bmhX+CpsFBWg7ilDSPgj0lD2ncr5ev/BP8VvyAJhqVyZeUhPOrEhEFxgEtjft846Z/guQTNT89Q5P9flMLoth4F7808wKtWWKzAwNQHxrh/1vaid2F+XpYTSbQf1XA2McOmOpROnvpvMEA4tSjq1cW0sws2gCYxswY6TKkvzYnJq1NHZLnRU4BX+4U0uburvusu8Kv8iHY7qefkM4IFngJHEOUXmLEPgiGsI8YnlZILit3vSSLRTQe/MPIZva5pshNIEmyFQlCvruJKXPkCEfmePzkphXHdzZNQdoRI9KPlBAxlj/I8U97ERPS5bjGbWDFbEdqHVe5caTBeZZx2H/IMvzeN15yoQAAAABJRU5ErkJggg==
 ";
         
-        $__internal_7f3f6cf08bd16171d23ba14500ed3621ce5e9967bed03a7b04b9d926ca17301d->leave($__internal_7f3f6cf08bd16171d23ba14500ed3621ce5e9967bed03a7b04b9d926ca17301d_prof);
+        $__internal_0df0d8b7521fec5178d755653e24ab3564225ef95511709686df7fdc4a8a0304->leave($__internal_0df0d8b7521fec5178d755653e24ab3564225ef95511709686df7fdc4a8a0304_prof);
 
         
-        $__internal_3ebddcf87477b5f270ae51e69bbd2214cd00ced785cdf486e546e79956ea7ceb->leave($__internal_3ebddcf87477b5f270ae51e69bbd2214cd00ced785cdf486e546e79956ea7ceb_prof);
+        $__internal_c974942a34a3e9a7049b32c444497180f6e2f1d7be4254b5444529ef64da7525->leave($__internal_c974942a34a3e9a7049b32c444497180f6e2f1d7be4254b5444529ef64da7525_prof);
 
     }
 

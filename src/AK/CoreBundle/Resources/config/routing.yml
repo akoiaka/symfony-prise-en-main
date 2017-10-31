@@ -1,0 +1,9 @@
+ak_core_homepage:
+    path:     /
+    defaults:
+        _controller: AKCoreBundle:Default:index
+
+ak_core_contact:
+    path: /contact
+    defaults:
+        _controller: AKCoreBundle:Default:contact

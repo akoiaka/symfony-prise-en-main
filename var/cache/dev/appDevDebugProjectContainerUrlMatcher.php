@@ -103,32 +103,43 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/platform')) {
-            // oc_platform_home
-            if (preg_match('#^/platform(?:/(?P<page>\\d*))?$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_home')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::indexAction',  'page' => 1,));
+        // ak_core_homepage
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'ak_core_homepage');
             }
 
-            // oc_platform_view
-            if (0 === strpos($pathinfo, '/platform/advert') && preg_match('#^/platform/advert/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_view')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::viewAction',));
-            }
+            return array (  '_controller' => 'AK\\CoreBundle\\Controller\\DefaultController::indexAction',  '_route' => 'ak_core_homepage',);
+        }
 
-            // oc_platform_add
-            if ('/platform/add' === $pathinfo) {
-                return array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::addAction',  'requirements' =>   array (    'id' => '\\d+',  ),  '_route' => 'oc_platform_add',);
-            }
+        // ak_core_contact
+        if ('/contact' === $pathinfo) {
+            return array (  '_controller' => 'AK\\CoreBundle\\Controller\\DefaultController::contactAction',  '_route' => 'ak_core_contact',);
+        }
 
-            // oc_platform_edit
-            if (0 === strpos($pathinfo, '/platform/edit') && preg_match('#^/platform/edit/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_edit')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::editAction',));
-            }
+        // oc_platform_home
+        if (preg_match('#^/(?P<page>\\d+)?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_home')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::indexAction',  'page' => 1,));
+        }
 
-            // oc_platform_view_slug
-            if (preg_match('#^/platform/(?P<year>\\d{4})/(?P<slug>[^/\\.]++)\\.(?P<_format>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_view_slug')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::viewSlugAction',));
-            }
+        // oc_platform_view
+        if (0 === strpos($pathinfo, '/advert') && preg_match('#^/advert/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_view')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::viewAction',));
+        }
 
+        // oc_platform_add
+        if ('/add' === $pathinfo) {
+            return array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::addAction',  'requirements' =>   array (    'id' => '\\d+',  ),  '_route' => 'oc_platform_add',);
+        }
+
+        // oc_platform_edit
+        if (0 === strpos($pathinfo, '/edit') && preg_match('#^/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_edit')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::editAction',  'requirements' =>   array (    'id' => '\\d+',  ),));
+        }
+
+        // oc_platform_view_slug
+        if (preg_match('#^/(?P<year>\\d{4})/(?P<slug>[^/\\.]++)\\.(?P<_format>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_view_slug')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::viewSlugAction',));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -10076,7 +10076,7 @@ $roles = $this->roleHierarchy->getReachableRoles($token->getRoles());
 } else {
 $roles = $token->getRoles();
 }
-$variables = array('token'=> $token,'user'=> $token->getUser(),'object'=> $request,'request'=> $request,'roles'=> array_map(function ($role) { return $role->getRole(); }, $roles),'trust_resolver'=> $this->trustResolver,'auth_checker'=> $this->authChecker,
+$variables = array('token'=> $token,'user'=> $token->getUser(),'object'=> $request,'subject'=> $request,'request'=> $request,'roles'=> array_map(function ($role) { return $role->getRole(); }, $roles),'trust_resolver'=> $this->trustResolver,'auth_checker'=> $this->authChecker,
 );
 return array_merge($request->attributes->all(), $variables);
 }

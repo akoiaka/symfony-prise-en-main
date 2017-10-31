@@ -1,37 +1,61 @@
 <?php
-// ICI ON VA dès maintenant remettre explicitement les types comme on avait déjà fait dans le contrôleur,
-//améliorer le formulaire et préciser les types de champ du formulaire, ce que ne fait pas Doctrine quand
-//nous avons lancé la commande doctrine:generate:form ...
-
 
 namespace AK\AkopenclassBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class AdvertType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('date',      DateTimeType::class)
-            ->add('title',     TextType::class)
-            ->add('author',    TextType::class)
-            ->add('content',   TextareaType::class)
-            ->add('published', CheckboxType::class, array('required' => false))
-            ->add('save',      SubmitType::class);
+        $builder->add('categories', 'entity', array(
+            'class'    => 'AKAkopenclassBundle:Category',
+            'property' => 'name',
+            'multiple' => true
+
+        ))
+            ->add('save',      'submit')
+        ;
+
+        // On ajoute une fonction qui va écouter l'évènement PRE_SET_DATA
+        $builder->addEventListener(
+            FormEvents::PRE_SET_DATA,
+            function(FormEvent $event) {
+                // On récupère notre objet Advert sous-jacent
+                $advert = $event->getData();
+
+                if (null === $advert) {
+                    return;
+                }
+
+                if (!$advert->getPublished() || null === $advert->getId()) {
+                    $event->getForm()->add('published', 'checkbox', array('required' => false));
+                } else {
+                    $event->getForm()->remove('published');
+                }
+            }
+        );
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'AK\AkopenclassBundle\Entity\Advert'
         ));
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'ak_akopenclassbundle_advert';
     }
 }

@@ -15,109 +15,98 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_abc40ec5fa101e2e6d8b0bf23a178119c6fba61a108ef9c71f5e3f4c9c6c57e4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_abc40ec5fa101e2e6d8b0bf23a178119c6fba61a108ef9c71f5e3f4c9c6c57e4->enter($__internal_abc40ec5fa101e2e6d8b0bf23a178119c6fba61a108ef9c71f5e3f4c9c6c57e4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
+        $__internal_e269be500c89715f2d64f58dd6ab2329156c7e07e0e449810263a8dfd375d806 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_e269be500c89715f2d64f58dd6ab2329156c7e07e0e449810263a8dfd375d806->enter($__internal_e269be500c89715f2d64f58dd6ab2329156c7e07e0e449810263a8dfd375d806_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
 
-        $__internal_ee20ffcbb8786495cfce4f93584e675302ddfbcaae8308668d480fe0c57408ec = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ee20ffcbb8786495cfce4f93584e675302ddfbcaae8308668d480fe0c57408ec->enter($__internal_ee20ffcbb8786495cfce4f93584e675302ddfbcaae8308668d480fe0c57408ec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
+        $__internal_962b469a7053e9c84ce42919a51cc6c1f55642dbb234e51d181d7c79b3708967 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_962b469a7053e9c84ce42919a51cc6c1f55642dbb234e51d181d7c79b3708967->enter($__internal_962b469a7053e9c84ce42919a51cc6c1f55642dbb234e51d181d7c79b3708967_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
 
+        // line 2
+        echo "
+";
         // line 4
-        echo "
-<h3>Formulaire d'annonces</h3>
-
-<div class=\"well\">
+        echo "<div class=\"well\">
     ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-horizontal")));
+        // line 5
+        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
         echo "
+</div>
 
-    ";
-        // line 11
-        echo "    ";
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
-        echo "
+";
+        // line 10
+        echo "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
 
-    ";
-        // line 14
-        echo "    ";
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "date", array()), 'row');
-        echo "
+";
+        // line 13
+        echo "<script type=\"text/javascript\">
+    \$(document).ready(function() {
+        // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
+        var \$container = \$('div#ak_akopenclassbundle_advert_categories');
 
-    ";
-        // line 17
-        echo "    <div class=\"form-group\">
-        ";
-        // line 19
-        echo "        ";
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "title", array()), 'label', array("label_attr" => array("class" => "col-sm-2 control-label"), "label" => "Titre de l'annonce"));
-        echo "
+        // On ajoute un lien pour ajouter une nouvelle catégorie
+        var \$addLink = \$('<a href=\"#\" id=\"add_category\" class=\"btn btn-default\">Ajouter une catégorie</a>');
+        \$container.append(\$addLink);
 
-        ";
-        // line 22
-        echo "        ";
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "title", array()), 'errors');
-        echo "
+        // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
+        \$addLink.click(function(e) {
+            addCategory(\$container);
+            e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+            return false;
+        });
 
-        <div class=\"col-sm-10\">
-            ";
-        // line 26
-        echo "            ";
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "title", array()), 'widget', array("attr" => array("class" => "form-control")));
-        echo "
-        </div>
-    </div>
+        // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
+        var index = \$container.find(':input').length;
 
-    ";
-        // line 31
-        echo "    <div class=\"form-group\">
-        ";
-        // line 32
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "content", array()), 'label', array("label_attr" => array("class" => "col-sm-2 control-label"), "label" => "Contenu de l'annonce"));
-        echo "
-        ";
-        // line 33
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "content", array()), 'errors');
-        echo "
-        <div class=\"col-sm-10\">
-            ";
-        // line 35
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "content", array()), 'widget', array("attr" => array("class" => "form-control")));
-        echo "
-        </div>
-    </div>
+        // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
+        if (index == 0) {
+            addCategory(\$container);
+        } else {
+            // Pour chaque catégorie déjà existante, on ajoute un lien de suppression
+            \$container.children('div').each(function() {
+                addDeleteLink(\$(this));
+            });
+        }
 
-    ";
-        // line 39
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "author", array()), 'row');
-        echo "
-    ";
-        // line 40
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "published", array()), 'row');
-        echo "
+        // La fonction qui ajoute un formulaire Categorie
+        function addCategory(\$container) {
+            // Dans le contenu de l'attribut « data-prototype », on remplace :
+            // - le texte \"__name__label__\" qu'il contient par le label du champ
+            // - le texte \"__name__\" qu'il contient par le numéro du champ
+            var \$prototype = \$(\$container.attr('data-prototype').replace(/__name__label__/g, 'Catégorie n°' + (index+1))
+                .replace(/__name__/g, index));
 
-    ";
-        // line 43
-        echo "    ";
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "save", array()), 'widget', array("attr" => array("class" => "btn btn-primary")));
-        echo "
+            // On ajoute au prototype un lien pour pouvoir supprimer la catégorie
+            addDeleteLink(\$prototype);
 
-    ";
-        // line 48
-        echo "    ";
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
-        echo "
+            // On ajoute le prototype modifié à la fin de la balise <div>
+            \$container.append(\$prototype);
 
-    ";
-        // line 51
-        echo "    ";
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
-        echo "
-</div>";
+            // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
+            index++;
+        }
+
+        // La fonction qui ajoute un lien de suppression d'une catégorie
+        function addDeleteLink(\$prototype) {
+            // Création du lien
+            \$deleteLink = \$('<a href=\"#\" class=\"btn btn-danger\">Supprimer</a>');
+
+            // Ajout du lien
+            \$prototype.append(\$deleteLink);
+
+            // Ajout du listener sur le clic du lien
+            \$deleteLink.click(function(e) {
+                \$prototype.remove();
+                e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+                return false;
+            });
+        }
+    });
+</script>";
         
-        $__internal_abc40ec5fa101e2e6d8b0bf23a178119c6fba61a108ef9c71f5e3f4c9c6c57e4->leave($__internal_abc40ec5fa101e2e6d8b0bf23a178119c6fba61a108ef9c71f5e3f4c9c6c57e4_prof);
+        $__internal_e269be500c89715f2d64f58dd6ab2329156c7e07e0e449810263a8dfd375d806->leave($__internal_e269be500c89715f2d64f58dd6ab2329156c7e07e0e449810263a8dfd375d806_prof);
 
         
-        $__internal_ee20ffcbb8786495cfce4f93584e675302ddfbcaae8308668d480fe0c57408ec->leave($__internal_ee20ffcbb8786495cfce4f93584e675302ddfbcaae8308668d480fe0c57408ec_prof);
+        $__internal_962b469a7053e9c84ce42919a51cc6c1f55642dbb234e51d181d7c79b3708967->leave($__internal_962b469a7053e9c84ce42919a51cc6c1f55642dbb234e51d181d7c79b3708967_prof);
 
     }
 
@@ -133,7 +122,7 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 
     public function getDebugInfo()
     {
-        return array (  112 => 51,  106 => 48,  100 => 43,  95 => 40,  91 => 39,  84 => 35,  79 => 33,  75 => 32,  72 => 31,  64 => 26,  57 => 22,  51 => 19,  48 => 17,  42 => 14,  36 => 11,  31 => 8,  25 => 4,);
+        return array (  41 => 13,  37 => 10,  31 => 5,  28 => 4,  25 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -146,57 +135,81 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 
     public function getSourceContext()
     {
-        return new Twig_Source("{#cette vue n hérite de personne#}
-{#elle sera incluse par d autres vues qui, elles, hériteront probablement du layout#}
-{#pour notre cas actuel, cela ne nous concerne pas#}
+        return new Twig_Source("{# src/OC/PlatformBundle/Resources/views/Advert/form.html.twig #}
 
-<h3>Formulaire d'annonces</h3>
-
+{# Le formulaire reste inchangé #}
 <div class=\"well\">
-    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    {{ form(form) }}
+</div>
 
-    {# Les erreurs générales du formulaire. #}
-    {{ form_errors(form) }}
+{# On charge la bibliothèque jQuery. Ici, je la prends depuis le CDN google
+   mais si vous l'avez en local, changez simplement l'adresse. #}
+<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
 
-    {# Génération du label + error + widget pour un champ. #}
-    {{ form_row(form.date) }}
+{# Voici le script en question : #}
+<script type=\"text/javascript\">
+    \$(document).ready(function() {
+        // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
+        var \$container = \$('div#ak_akopenclassbundle_advert_categories');
 
-    {# Génération manuelle et éclatée : #}
-    <div class=\"form-group\">
-        {# Génération du label. #}
-        {{ form_label(form.title, \"Titre de l'annonce\", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        // On ajoute un lien pour ajouter une nouvelle catégorie
+        var \$addLink = \$('<a href=\"#\" id=\"add_category\" class=\"btn btn-default\">Ajouter une catégorie</a>');
+        \$container.append(\$addLink);
 
-        {# Affichage des erreurs pour ce champ précis. #}
-        {{ form_errors(form.title) }}
+        // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
+        \$addLink.click(function(e) {
+            addCategory(\$container);
+            e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+            return false;
+        });
 
-        <div class=\"col-sm-10\">
-            {# Génération de l'input. #}
-            {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
-        </div>
-    </div>
+        // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
+        var index = \$container.find(':input').length;
 
-    {# Idem pour un autre champ. #}
-    <div class=\"form-group\">
-        {{ form_label(form.content, \"Contenu de l'annonce\", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-        {{ form_errors(form.content) }}
-        <div class=\"col-sm-10\">
-            {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
-        </div>
-    </div>
+        // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
+        if (index == 0) {
+            addCategory(\$container);
+        } else {
+            // Pour chaque catégorie déjà existante, on ajoute un lien de suppression
+            \$container.children('div').each(function() {
+                addDeleteLink(\$(this));
+            });
+        }
 
-    {{ form_row(form.author) }}
-    {{ form_row(form.published) }}
+        // La fonction qui ajoute un formulaire Categorie
+        function addCategory(\$container) {
+            // Dans le contenu de l'attribut « data-prototype », on remplace :
+            // - le texte \"__name__label__\" qu'il contient par le label du champ
+            // - le texte \"__name__\" qu'il contient par le numéro du champ
+            var \$prototype = \$(\$container.attr('data-prototype').replace(/__name__label__/g, 'Catégorie n°' + (index+1))
+                .replace(/__name__/g, index));
 
-    {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
-    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+            // On ajoute au prototype un lien pour pouvoir supprimer la catégorie
+            addDeleteLink(\$prototype);
 
-    {# Génération automatique des champs pas encore écrits.
-       Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
-       et tous les champs cachés (type « hidden »). #}
-    {{ form_rest(form) }}
+            // On ajoute le prototype modifié à la fin de la balise <div>
+            \$container.append(\$prototype);
 
-    {# Fermeture de la balise <form> du formulaire HTML #}
-    {{ form_end(form) }}
-</div>", "AKAkopenclassBundle:Advert:form.html.twig", "/Applications/MAMP/htdocs/symphony/symfony-prise-en-main/src/AK/AkopenclassBundle/Resources/views/Advert/form.html.twig");
+            // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
+            index++;
+        }
+
+        // La fonction qui ajoute un lien de suppression d'une catégorie
+        function addDeleteLink(\$prototype) {
+            // Création du lien
+            \$deleteLink = \$('<a href=\"#\" class=\"btn btn-danger\">Supprimer</a>');
+
+            // Ajout du lien
+            \$prototype.append(\$deleteLink);
+
+            // Ajout du listener sur le clic du lien
+            \$deleteLink.click(function(e) {
+                \$prototype.remove();
+                e.preventDefault(); // évite qu'un # apparaisse dans l'URL
+                return false;
+            });
+        }
+    });
+</script>", "AKAkopenclassBundle:Advert:form.html.twig", "/Applications/MAMP/htdocs/symphony/symfony-prise-en-main/src/AK/AkopenclassBundle/Resources/views/Advert/form.html.twig");
     }
 }
