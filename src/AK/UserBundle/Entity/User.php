@@ -4,6 +4,8 @@ namespace AK\UserBundle\Entity\User;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 class User implements UserInterface
+// AMOMALE //
+
 {
     /**
      * User
