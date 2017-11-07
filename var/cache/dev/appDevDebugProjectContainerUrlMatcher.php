@@ -103,22 +103,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // ak_core_homepage
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'ak_core_homepage');
-            }
-
-            return array (  '_controller' => 'AK\\CoreBundle\\Controller\\DefaultController::indexAction',  '_route' => 'ak_core_homepage',);
+        // ak_user_homepage
+        if ('/user' === $pathinfo) {
+            return array (  '_controller' => 'AK\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'ak_user_homepage',);
         }
 
-        // ak_core_contact
+        // oc_core_home
+        if ('' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'oc_core_home');
+            }
+
+            return array (  '_controller' => 'AK\\CoreBundle\\Controller\\CoreController::indexAction',  '_route' => 'oc_core_home',);
+        }
+
+        // oc_core_contact
         if ('/contact' === $pathinfo) {
-            return array (  '_controller' => 'AK\\CoreBundle\\Controller\\DefaultController::contactAction',  '_route' => 'ak_core_contact',);
+            return array (  '_controller' => 'AK\\CoreBundle\\Controller\\CoreController::contactAction',  '_route' => 'oc_core_contact',);
         }
 
         // oc_platform_home
-        if (preg_match('#^/(?P<page>\\d+)?$#s', $pathinfo, $matches)) {
+        if (preg_match('#^/(?P<page>\\d*)?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_home')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::indexAction',  'page' => 1,));
         }
 
@@ -129,12 +134,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // oc_platform_add
         if ('/add' === $pathinfo) {
-            return array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::addAction',  'requirements' =>   array (    'id' => '\\d+',  ),  '_route' => 'oc_platform_add',);
+            return array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::addAction',  '_route' => 'oc_platform_add',);
         }
 
         // oc_platform_edit
-        if (0 === strpos($pathinfo, '/edit') && preg_match('#^/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_edit')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::editAction',  'requirements' =>   array (    'id' => '\\d+',  ),));
+        if (0 === strpos($pathinfo, '/edit') && preg_match('#^/edit/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_edit')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::editAction',));
+        }
+
+        // oc_platform_delete
+        if (0 === strpos($pathinfo, '/delete') && preg_match('#^/delete/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_delete')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::deleteAction',));
+        }
+
+        // oc_platform_purge
+        if (0 === strpos($pathinfo, '/purge') && preg_match('#^/purge/(?P<days>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oc_platform_purge')), array (  '_controller' => 'AK\\AkopenclassBundle\\Controller\\AdvertController::purgeAction',));
         }
 
         // oc_platform_view_slug

@@ -21,51 +21,50 @@ class __TwigTemplate_5c1c6287104142cb9904a8270347e1d830fcecb937ce424106341f2f5d4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_529433db188d7a2f84981b023d341b7e7828d74a180c7972299191418421b935 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_529433db188d7a2f84981b023d341b7e7828d74a180c7972299191418421b935->enter($__internal_529433db188d7a2f84981b023d341b7e7828d74a180c7972299191418421b935_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:add.html.twig"));
+        $__internal_d450c255c1f997cf3733d4aa61836735009cd01f7ab4e789f8ab3b8715a52662 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_d450c255c1f997cf3733d4aa61836735009cd01f7ab4e789f8ab3b8715a52662->enter($__internal_d450c255c1f997cf3733d4aa61836735009cd01f7ab4e789f8ab3b8715a52662_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:add.html.twig"));
 
-        $__internal_a1f26ac8dc97aa3b5367168c7e4571a925d19246d79f6b62522275dacbd80b4f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a1f26ac8dc97aa3b5367168c7e4571a925d19246d79f6b62522275dacbd80b4f->enter($__internal_a1f26ac8dc97aa3b5367168c7e4571a925d19246d79f6b62522275dacbd80b4f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:add.html.twig"));
+        $__internal_1f3d07d90b37d226e74d1cba892d82b65d4e5ff273086a8ee4a065ca820e6666 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1f3d07d90b37d226e74d1cba892d82b65d4e5ff273086a8ee4a065ca820e6666->enter($__internal_1f3d07d90b37d226e74d1cba892d82b65d4e5ff273086a8ee4a065ca820e6666_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:add.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_529433db188d7a2f84981b023d341b7e7828d74a180c7972299191418421b935->leave($__internal_529433db188d7a2f84981b023d341b7e7828d74a180c7972299191418421b935_prof);
+        $__internal_d450c255c1f997cf3733d4aa61836735009cd01f7ab4e789f8ab3b8715a52662->leave($__internal_d450c255c1f997cf3733d4aa61836735009cd01f7ab4e789f8ab3b8715a52662_prof);
 
         
-        $__internal_a1f26ac8dc97aa3b5367168c7e4571a925d19246d79f6b62522275dacbd80b4f->leave($__internal_a1f26ac8dc97aa3b5367168c7e4571a925d19246d79f6b62522275dacbd80b4f_prof);
+        $__internal_1f3d07d90b37d226e74d1cba892d82b65d4e5ff273086a8ee4a065ca820e6666->leave($__internal_1f3d07d90b37d226e74d1cba892d82b65d4e5ff273086a8ee4a065ca820e6666_prof);
 
     }
 
-    // line 4
+    // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_20a97f14f04195f4c054709ed8f15c662e7737552bbc8768b7e76a079be1af44 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_20a97f14f04195f4c054709ed8f15c662e7737552bbc8768b7e76a079be1af44->enter($__internal_20a97f14f04195f4c054709ed8f15c662e7737552bbc8768b7e76a079be1af44_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_43c34f857be8c7345574a1f840bc2b492a07a85801ec676a348e5b89fbab0fde = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_43c34f857be8c7345574a1f840bc2b492a07a85801ec676a348e5b89fbab0fde->enter($__internal_43c34f857be8c7345574a1f840bc2b492a07a85801ec676a348e5b89fbab0fde_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_9bb88a9c372541fd77d7ba5af86202551eac7ee2bab98a3903f945bde53e75cf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9bb88a9c372541fd77d7ba5af86202551eac7ee2bab98a3903f945bde53e75cf->enter($__internal_9bb88a9c372541fd77d7ba5af86202551eac7ee2bab98a3903f945bde53e75cf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_69e799c37dc51d481c3b1d23fd4888f6f5d3e8d254f00898540e7f4a562f849e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_69e799c37dc51d481c3b1d23fd4888f6f5d3e8d254f00898540e7f4a562f849e->enter($__internal_69e799c37dc51d481c3b1d23fd4888f6f5d3e8d254f00898540e7f4a562f849e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 5
+        // line 4
         echo "
-<h2>Ajouter une annonce</h2>
+    <h2>Ajouter une annonce</h2>
 
     ";
-        // line 8
+        // line 7
         echo twig_include($this->env, $context, "AKAkopenclassBundle:Advert:form.html.twig");
         echo "
-";
-        // line 10
-        echo "
-<p>
-    Attention : cette annonce sera ajoutée directement sur la page d'accueil après validation du formulaire.
-</p>
+
+    <p>
+        Attention : cette annonce sera ajoutée directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
 
 ";
         
-        $__internal_9bb88a9c372541fd77d7ba5af86202551eac7ee2bab98a3903f945bde53e75cf->leave($__internal_9bb88a9c372541fd77d7ba5af86202551eac7ee2bab98a3903f945bde53e75cf_prof);
+        $__internal_69e799c37dc51d481c3b1d23fd4888f6f5d3e8d254f00898540e7f4a562f849e->leave($__internal_69e799c37dc51d481c3b1d23fd4888f6f5d3e8d254f00898540e7f4a562f849e_prof);
 
         
-        $__internal_20a97f14f04195f4c054709ed8f15c662e7737552bbc8768b7e76a079be1af44->leave($__internal_20a97f14f04195f4c054709ed8f15c662e7737552bbc8768b7e76a079be1af44_prof);
+        $__internal_43c34f857be8c7345574a1f840bc2b492a07a85801ec676a348e5b89fbab0fde->leave($__internal_43c34f857be8c7345574a1f840bc2b492a07a85801ec676a348e5b89fbab0fde_prof);
 
     }
 
@@ -81,7 +80,7 @@ class __TwigTemplate_5c1c6287104142cb9904a8270347e1d830fcecb937ce424106341f2f5d4
 
     public function getDebugInfo()
     {
-        return array (  58 => 10,  54 => 8,  49 => 5,  40 => 4,  11 => 1,);
+        return array (  54 => 7,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -95,21 +94,19 @@ class __TwigTemplate_5c1c6287104142cb9904a8270347e1d830fcecb937ce424106341f2f5d4
     public function getSourceContext()
     {
         return new Twig_Source("{% extends \"AKAkopenclassBundle::layout.html.twig\" %}
-{#ici on effectue un héritage#}
-
+{#on effetue ici un heritage#}
 {% block body %}
 
-<h2>Ajouter une annonce</h2>
+    <h2>Ajouter une annonce</h2>
 
     {{ include(\"AKAkopenclassBundle:Advert:form.html.twig\") }}
-{#ici on effectue une inclusion#}
 
-<p>
-    Attention : cette annonce sera ajoutée directement sur la page d'accueil après validation du formulaire.
-</p>
+    <p>
+        Attention : cette annonce sera ajoutée directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
 
 {% endblock %}
-
 {#ANCIEN CODE (avant les include)#}
 
 {#<!DOCTYPE html>#}

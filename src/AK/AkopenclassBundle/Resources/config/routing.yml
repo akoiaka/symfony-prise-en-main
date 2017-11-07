@@ -1,40 +1,43 @@
-
 oc_platform_home:
-    path:    /{page}
+    path:      /{page}
     defaults:
         _controller: AKAkopenclassBundle:Advert:index
-        page:    1
+        page:        1
     requirements:
         page: \d+
-
+    
 oc_platform_view:
-    path:    /advert/{id}
+    path:      /advert/{id}
     defaults:
         _controller: AKAkopenclassBundle:Advert:view
     requirements:
         id: \d+
 
 oc_platform_add:
-    path:    /add
+    path:      /add
     defaults:
         _controller: AKAkopenclassBundle:Advert:add
-        requirements:
-                id: \d+
-
 
 oc_platform_edit:
-    path:    /edit/{id}
+    path:      /edit/{id}
     defaults:
         _controller: AKAkopenclassBundle:Advert:edit
-        requirements:
-                id: \d+
+    requirements:
+        id: \d+
 
-oc_platform_add:
-    path:    /delete/{id}
+oc_platform_delete:
+    path:      /delete/{id}
     defaults:
         _controller: AKAkopenclassBundle:Advert:delete
     requirements:
         id: \d+
+
+oc_platform_purge:
+    path:     /purge/{days}
+    defaults:
+        _controller: AKAkopenclassBundle:Advert:purge
+    requirements:
+        days: \d+
 
 oc_platform_view_slug:
     path:    /{year}/{slug}.{_format}

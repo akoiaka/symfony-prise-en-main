@@ -1,9 +1,10 @@
-ak_core_homepage:
-    path:     /
+oc_core_home:
+    path: /
     defaults:
-        _controller: AKCoreBundle:Default:index
+        _controller: AKCoreBundle:Core:index
 
-ak_core_contact:
+
+oc_core_contact:
     path: /contact
     defaults:
-        _controller: AKCoreBundle:Default:contact
+        _controller: AKCoreBundle:Core:contact

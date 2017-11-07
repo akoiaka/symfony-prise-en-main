@@ -1,0 +1,4 @@
+services:
+#    ak_user.example:
+#        class: AK\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

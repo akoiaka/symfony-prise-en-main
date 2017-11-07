@@ -1,19 +1,17 @@
 {% extends "AKAkopenclassBundle::layout.html.twig" %}
-{#ici on effectue un héritage#}
-
+{#on effetue ici un heritage#}
 {% block body %}
 
-<h2>Ajouter une annonce</h2>
+    <h2>Ajouter une annonce</h2>
 
     {{ include("AKAkopenclassBundle:Advert:form.html.twig") }}
-{#ici on effectue une inclusion#}
 
-<p>
-    Attention : cette annonce sera ajoutée directement sur la page d'accueil après validation du formulaire.
-</p>
+    <p>
+        Attention : cette annonce sera ajoutée directement
+        sur la page d'accueil après validation du formulaire.
+    </p>
 
 {% endblock %}
-
 {#ANCIEN CODE (avant les include)#}
 
 {#<!DOCTYPE html>#}
