@@ -12,6 +12,7 @@ class AdvertPurger
     {
         $this->em = $em;
     }
+
     public function purge($days)
     {
         $advertRepository      = $this->em->getRepository('AKAkopenclassBundle:Advert');

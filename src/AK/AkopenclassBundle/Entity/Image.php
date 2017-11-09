@@ -45,6 +45,7 @@ class Image
         // Et on génère l'attribut alt de la balise <img>, à la valeur du nom du fichier sur le PC de l'internaute
         $this->alt = $this->file->getClientOriginalName();
     }
+
     /**
      * @ORM\PostPersist()
      * @ORM\PostUpdate()
@@ -68,6 +69,7 @@ class Image
             $this->id.'.'.$this->url   // Le nom du fichier à créer, ici « id.extension »
         );
     }
+
     /**
      * @ORM\PreRemove()
      */
@@ -76,6 +78,7 @@ class Image
         // On sauvegarde temporairement le nom du fichier, car il dépend de l'id
         $this->tempFilename = $this->getUploadRootDir().'/'.$this->id.'.'.$this->url;
     }
+
     /**
      * @ORM\PostRemove()
      */
@@ -101,6 +104,7 @@ class Image
     {
         return $this->getUploadDir().'/'.$this->getId().'.'.$this->getUrl();
     }
+
     /**
      * @return int
      */
@@ -108,6 +112,7 @@ class Image
     {
         return $this->id;
     }
+
     /**
      * @param string $url
      */
@@ -115,6 +120,7 @@ class Image
     {
         $this->url = $url;
     }
+
     /**
      * @return string
      */
@@ -122,6 +128,7 @@ class Image
     {
         return $this->url;
     }
+
     /**
      * @param string $alt
      */
@@ -129,6 +136,7 @@ class Image
     {
         $this->alt = $alt;
     }
+
     /**
      * @return string
      */
@@ -136,6 +144,7 @@ class Image
     {
         return $this->alt;
     }
+
     /**
      * @return UploadedFile
      */
@@ -143,6 +152,7 @@ class Image
     {
         return $this->file;
     }
+
     /**
      * @param UploadedFile $file
      */

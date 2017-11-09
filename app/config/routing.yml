@@ -1,23 +1,54 @@
-ak_core:
-    resource: "@AKCoreBundle/Resources/config/routing.yml"
-    prefix:   /
-
-ak_akopenclass:
-    resource: "@AKAkopenclassBundle/Resources/config/routing.yml"
-    prefix:   /
-
 oc_platform:
     resource: "@AKAkopenclassBundle/Resources/config/routing.yml"
+    prefix:   /
 
-login:
-    pattern:   /login
-    defaults:  { _controller: AKUserBundle:Security:login }
+# On inclut également les routes de notre CoreBundle, sans préfixe
+oc_core:
+    resource: "@AKCoreBundle/Resources/config/routing.yml"
 
-login_check:
-    pattern:   /login_check
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
-logout:
-    pattern:   /logout
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix:   /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix:   /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix:   /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix:   /profile
+
+#----------------
+#ANCIEN ROUTING
+#----------------
+
+#ak_core:
+#    resource: "@AKCoreBundle/Resources/config/routing.yml"
+#    prefix:    /
+#
+#ak_akopenclass:
+#    resource: "@AKAkopenclassBundle/Resources/config/routing.yml"
+#    prefix:    /
+#
+#oc_platform:
+#    resource: "@AKAkopenclassBundle/Resources/config/routing.yml"
+
+#login:
+#    pattern:    /login
+#    defaults:   { _controller: AKUserBundle:Security:login }
+#
+##login_check:
+##    pattern:    /login_check
+#
+#logout:
+#    pattern:    /logout
 
 #
 #fos_user_security:
@@ -38,4 +69,4 @@ logout:
 #fos_user_change_password:
 #    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
 #    prefix: /profile
-
+#

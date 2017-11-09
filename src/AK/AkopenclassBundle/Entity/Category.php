@@ -13,10 +13,12 @@ class Category
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
     /**
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+
     /**
      * @return int
      */
@@ -24,6 +26,7 @@ class Category
     {
         return $this->id;
     }
+
     /**
      * @param string $name
      */
@@ -31,6 +34,7 @@ class Category
     {
         $this->name = $name;
     }
+
     /**
      * @return string
      */

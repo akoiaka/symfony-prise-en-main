@@ -1,5 +1,4 @@
 <?php
-// src/OC/PlatformBundle/Entity/Advert.php
 namespace AK\AkopenclassBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -27,6 +26,7 @@ class Advert
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
     /**
      * @var \DateTime
      *
@@ -34,6 +34,7 @@ class Advert
      * @Assert\DateTime()
      */
     private $date;
+
     /**
      * @var string
      *
@@ -41,6 +42,7 @@ class Advert
      * @ORM\Column(name="title", type="string", length=255, unique=true)
      */
     private $title;
+
     /**
      * @var string
      *
@@ -48,6 +50,7 @@ class Advert
      * @Assert\Length(min=2)
      */
     private $author;
+
     /**
      * @var string
      *
@@ -56,37 +59,45 @@ class Advert
      * @Antiflood()
      */
     private $content;
+
     /**
      * @ORM\Column(name="published", type="boolean")
      */
     private $published = true;
+
     /**
      * @ORM\OneToOne(targetEntity="AK\AkopenclassBundle\Entity\Image", cascade={"persist", "remove"})
      * @Assert\Valid()
      */
     private $image;
+
     /**
      * @ORM\ManyToMany(targetEntity="AK\AkopenclassBundle\Entity\Category", cascade={"persist"})
      * @ORM\JoinTable(name="oc_advert_category")
      */
     private $categories;
+
     /**
      * @ORM\OneToMany(targetEntity="AK\AkopenclassBundle\Entity\Application", mappedBy="advert")
      */
     private $applications; // Notez le « s », une annonce est liée à plusieurs candidatures
+
     /**
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     private $updatedAt;
+
     /**
      * @ORM\Column(name="nb_applications", type="integer")
      */
     private $nbApplications = 0;
+
     /**
      * @Gedmo\Slug(fields={"title"})
      * @ORM\Column(name="slug", type="string", length=255, unique=true)
      */
     private $slug;
+
     public function __construct()
     {
         $this->date         = new \Datetime();
@@ -124,6 +135,7 @@ class Advert
             ;
         }
     }
+
     /**
      * @return int
      */
@@ -131,6 +143,7 @@ class Advert
     {
         return $this->id;
     }
+
     /**
      * @param \DateTime $date
      */
@@ -138,6 +151,7 @@ class Advert
     {
         $this->date = $date;
     }
+
     /**
      * @return \DateTime
      */
@@ -145,6 +159,7 @@ class Advert
     {
         return $this->date;
     }
+
     /**
      * @param string $title
      */
@@ -152,6 +167,7 @@ class Advert
     {
         $this->title = $title;
     }
+
     /**
      * @return string
      */
@@ -159,6 +175,7 @@ class Advert
     {
         return $this->title;
     }
+
     /**
      * @param string $author
      */
@@ -166,6 +183,7 @@ class Advert
     {
         $this->author = $author;
     }
+
     /**
      * @return string
      */
@@ -173,6 +191,7 @@ class Advert
     {
         return $this->author;
     }
+
     /**
      * @param string $content
      */
@@ -180,6 +199,7 @@ class Advert
     {
         $this->content = $content;
     }
+
     /**
      * @return string
      */
@@ -187,6 +207,7 @@ class Advert
     {
         return $this->content;
     }
+
     /**
      * @param bool $published
      */
@@ -194,6 +215,7 @@ class Advert
     {
         $this->published = $published;
     }
+
     /**
      * @return bool
      */
@@ -201,14 +223,17 @@ class Advert
     {
         return $this->published;
     }
+
     public function setImage(Image $image = null)
     {
         $this->image = $image;
     }
+
     public function getImage()
     {
         return $this->image;
     }
+
     /**
      * @param Category $category
      */
@@ -216,6 +241,7 @@ class Advert
     {
         $this->categories[] = $category;
     }
+
     /**
      * @param Category $category
      */
@@ -223,6 +249,7 @@ class Advert
     {
         $this->categories->removeElement($category);
     }
+
     /**
      * @return ArrayCollection
      */
@@ -230,6 +257,7 @@ class Advert
     {
         return $this->categories;
     }
+
     /**
      * @param Application $application
      */
@@ -239,6 +267,7 @@ class Advert
         // On lie l'annonce à la candidature
         $application->setAdvert($this);
     }
+
     /**
      * @param Application $application
      */
@@ -246,6 +275,7 @@ class Advert
     {
         $this->applications->removeElement($application);
     }
+
     /**
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -253,6 +283,7 @@ class Advert
     {
         return $this->applications;
     }
+
     /**
      * @param \DateTime $updatedAt
      */
@@ -260,6 +291,7 @@ class Advert
     {
         $this->updatedAt = $updatedAt;
     }
+
     /**
      * @return \DateTime
      */
@@ -267,6 +299,7 @@ class Advert
     {
         return $this->updatedAt;
     }
+
     /**
      * @param integer $nbApplications
      */
@@ -274,6 +307,7 @@ class Advert
     {
         $this->nbApplications = $nbApplications;
     }
+
     /**
      * @return integer
      */
@@ -281,6 +315,7 @@ class Advert
     {
         return $this->nbApplications;
     }
+
     /**
      * @param string $slug
      */
@@ -288,6 +323,7 @@ class Advert
     {
         $this->slug = $slug;
     }
+
     /**
      * @return string
      */

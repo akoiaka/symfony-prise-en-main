@@ -1,15 +1,45 @@
 <?php
-namespace AK\AkopenclassBundle\Form;
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
-class AdvertEditType extends AbstractType
+namespace AK\AkopenclassBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="oc_skill")
+ */
+class Skill
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @return integer
+     */
+    public function getId()
     {
-        $builder->remove('date');
+        return $this->id;
     }
-    public function getParent()
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
     {
-        return AdvertType::class;
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

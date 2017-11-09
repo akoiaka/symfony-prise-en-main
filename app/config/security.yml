@@ -1,46 +1,84 @@
 security:
-    encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+  encoders:
+    AK\UserBundle\Entity\User: sha512
 
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+  role_hierarchy:
+    # Un admin hérite des droits d'auteur et de modérateur
+    ROLE_ADMIN:       [ROLE_AUTEUR, ROLE_MODERATEUR]
+    # On garde ce rôle superadmin, il nous resservira par la suite
+    ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
-    providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+  providers:
+    main:
+      id: fos_user.user_provider.username
 
-    firewalls:
-        dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    main:
+      pattern:      ^/
+      anonymous:    true
+      provider:     main
+      form_login:
+        login_path: fos_user_security_login
+        check_path: fos_user_security_check
+      logout:
+        path:       fos_user_security_logout
+        target:     /
+      remember_me:
+        secret:     %secret% # %secret% est un paramètre de parameter
 
-##   Création d un pare-feu qu on appelera main
-#    main est le nom du pare-feu. Il s'agit juste d'un identifiant unique, mettez en réalité ce que vous voulez.
-#    pattern: ^/est un masque d'URL. Cela signifie que toutes les URL commençant par « / » (c'est-à-dire notre site tout entier) sont protégées par ce pare-feu.
-#    On dit qu'elles sont derrière le pare-feu main.
-#    anonymous: true accepte les utilisateurs anonymes. Nous protégerons nos ressources grâce aux rôles.
-        main:
-            pattern:   ^/
-            anonymous: true
-            provider:  in_memory
-            form_login:
-                login_path: login
-                check_path: login_check
-            logout:
-                path:   logout
-                target: /
+  access_control:
+    - { path: ^/admin, roles: ROLE_ADMIN }
 
-    access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+#--------------
+#INITIATION SECURITE ET GESTION USERS
+#--------------
+#
+#security:
+#    encoders:
+#        Symfony\Component\Security\Core\User\User: plaintext
+#
+#    role_hierarchy:
+#        ROLE_ADMIN:       ROLE_USER
+#        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+#
+#    providers:
+#        in_memory:
+#            memory:
+#                users:
+#                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+#                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+#
+#    firewalls:
+#        dev:
+#            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+#            security: false
+#
+###   Création d un pare-feu qu on appelera main
+##    main est le nom du pare-feu. Il s'agit juste d'un identifiant unique, mettez en réalité ce que vous voulez.
+##    pattern: ^/est un masque d'URL. Cela signifie que toutes les URL commençant par « / » (c'est-à-dire notre site tout entier) sont protégées par ce pare-feu.
+##    On dit qu'elles sont derrière le pare-feu main.
+##    anonymous: true accepte les utilisateurs anonymes. Nous protégerons nos ressources grâce aux rôles.
+#        main:
+#            pattern:   ^/
+#            anonymous: true
+#            provider:  in_memory
+#            form_login:
+#                login_path: login
+#                check_path: login_check
+#            logout:
+#                path:   logout
+#                target: /
+#
+#    access_control:
+#        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
 
 #----------------------------
 ##-- CI DESSOUS LE CODE DE BASE DU DOSSIER SECURITY.YML --
 #----------------------------
-
+#
 ## To get started with security, check out the documentation:
 ## https://symfony.com/doc/current/security.html
 #security:

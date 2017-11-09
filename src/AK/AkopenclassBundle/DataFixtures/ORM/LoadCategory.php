@@ -1,6 +1,6 @@
 <?php
 namespace AK\AkopenclassBundle\DataFixtures\ORM;
-//use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use AK\AkopenclassBundle\Entity\Category;
 class LoadCategory implements FixtureInterface

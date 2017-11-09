@@ -15,11 +15,11 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_644c6fdc17b8c9ceec4101c78cf45cc4f702910b3421957769f5107960f91218 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_644c6fdc17b8c9ceec4101c78cf45cc4f702910b3421957769f5107960f91218->enter($__internal_644c6fdc17b8c9ceec4101c78cf45cc4f702910b3421957769f5107960f91218_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
+        $__internal_edfc814142e6400ef7fd58f3b219b54e8a7d09f425be2587c88f31cb765ef235 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_edfc814142e6400ef7fd58f3b219b54e8a7d09f425be2587c88f31cb765ef235->enter($__internal_edfc814142e6400ef7fd58f3b219b54e8a7d09f425be2587c88f31cb765ef235_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
 
-        $__internal_80e4125f14ce5ab6386888666ff4ee1e78f1a9c95a92a917945b463d706df864 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_80e4125f14ce5ab6386888666ff4ee1e78f1a9c95a92a917945b463d706df864->enter($__internal_80e4125f14ce5ab6386888666ff4ee1e78f1a9c95a92a917945b463d706df864_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
+        $__internal_43b5b634fa8e2058a4ded408041bf6e8fd2159f7ebb9f0f6d8cc3a9e0a53ed0e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_43b5b634fa8e2058a4ded408041bf6e8fd2159f7ebb9f0f6d8cc3a9e0a53ed0e->enter($__internal_43b5b634fa8e2058a4ded408041bf6e8fd2159f7ebb9f0f6d8cc3a9e0a53ed0e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AKAkopenclassBundle:Advert:form.html.twig"));
 
         // line 1
         echo "<h3>Formulaire d'annonce</h3>
@@ -144,25 +144,31 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
         // line 64
         echo "<script type=\"text/javascript\">
     \$(document).ready(function() {
+
         // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
         var \$container = \$('div#advert_categories');
+
         // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
         var index = \$container.find(':input').length;
+
         // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
         \$('#add_category').click(function(e) {
             addCategory(\$container);
             e.preventDefault(); // évite qu'un # apparaisse dans l'URL
             return false;
         });
+
         // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
         if (index == 0) {
             addCategory(\$container);
         } else {
+
             // S'il existe déjà des catégories, on ajoute un lien de suppression pour chacune d'entre elles
             \$container.children('div').each(function() {
                 addDeleteLink(\$(this));
             });
         }
+
         // La fonction qui ajoute un formulaire CategoryType
         function addCategory(\$container) {
             // Dans le contenu de l'attribut « data-prototype », on remplace :
@@ -172,24 +178,33 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
                 .replace(/__name__label__/g, 'Catégorie n°' + (index+1))
                 .replace(/__name__/g,        index)
             ;
+
             // On crée un objet jquery qui contient ce template
             var \$prototype = \$(template);
+
             // On ajoute au prototype un lien pour pouvoir supprimer la catégorie
             addDeleteLink(\$prototype);
+
             // On ajoute le prototype modifié à la fin de la balise <div>
             \$container.append(\$prototype);
+
             // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
             index++;
         }
+
         // La fonction qui ajoute un lien de suppression d'une catégorie
         function addDeleteLink(\$prototype) {
+
             // Création du lien
             var \$deleteLink = \$('<a href=\"#\" class=\"btn btn-danger\">Supprimer</a>');
+
             // Ajout du lien
             \$prototype.append(\$deleteLink);
+
             // Ajout du listener sur le clic du lien pour effectivement supprimer la catégorie
             \$deleteLink.click(function(e) {
                 \$prototype.remove();
+
                 e.preventDefault(); // évite qu'un # apparaisse dans l'URL
                 return false;
             });
@@ -197,10 +212,10 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
     });
 </script>";
         
-        $__internal_644c6fdc17b8c9ceec4101c78cf45cc4f702910b3421957769f5107960f91218->leave($__internal_644c6fdc17b8c9ceec4101c78cf45cc4f702910b3421957769f5107960f91218_prof);
+        $__internal_edfc814142e6400ef7fd58f3b219b54e8a7d09f425be2587c88f31cb765ef235->leave($__internal_edfc814142e6400ef7fd58f3b219b54e8a7d09f425be2587c88f31cb765ef235_prof);
 
         
-        $__internal_80e4125f14ce5ab6386888666ff4ee1e78f1a9c95a92a917945b463d706df864->leave($__internal_80e4125f14ce5ab6386888666ff4ee1e78f1a9c95a92a917945b463d706df864_prof);
+        $__internal_43b5b634fa8e2058a4ded408041bf6e8fd2159f7ebb9f0f6d8cc3a9e0a53ed0e->leave($__internal_43b5b634fa8e2058a4ded408041bf6e8fd2159f7ebb9f0f6d8cc3a9e0a53ed0e_prof);
 
     }
 
@@ -294,25 +309,31 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
 {# Voici le script en question : #}
 <script type=\"text/javascript\">
     \$(document).ready(function() {
+
         // On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
         var \$container = \$('div#advert_categories');
+
         // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
         var index = \$container.find(':input').length;
+
         // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
         \$('#add_category').click(function(e) {
             addCategory(\$container);
             e.preventDefault(); // évite qu'un # apparaisse dans l'URL
             return false;
         });
+
         // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
         if (index == 0) {
             addCategory(\$container);
         } else {
+
             // S'il existe déjà des catégories, on ajoute un lien de suppression pour chacune d'entre elles
             \$container.children('div').each(function() {
                 addDeleteLink(\$(this));
             });
         }
+
         // La fonction qui ajoute un formulaire CategoryType
         function addCategory(\$container) {
             // Dans le contenu de l'attribut « data-prototype », on remplace :
@@ -322,24 +343,33 @@ class __TwigTemplate_04a8106755c7bdd28766f3a56d94e4858010c1d23977c88683ecc9513ef
                 .replace(/__name__label__/g, 'Catégorie n°' + (index+1))
                 .replace(/__name__/g,        index)
             ;
+
             // On crée un objet jquery qui contient ce template
             var \$prototype = \$(template);
+
             // On ajoute au prototype un lien pour pouvoir supprimer la catégorie
             addDeleteLink(\$prototype);
+
             // On ajoute le prototype modifié à la fin de la balise <div>
             \$container.append(\$prototype);
+
             // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
             index++;
         }
+
         // La fonction qui ajoute un lien de suppression d'une catégorie
         function addDeleteLink(\$prototype) {
+
             // Création du lien
             var \$deleteLink = \$('<a href=\"#\" class=\"btn btn-danger\">Supprimer</a>');
+
             // Ajout du lien
             \$prototype.append(\$deleteLink);
+
             // Ajout du listener sur le clic du lien pour effectivement supprimer la catégorie
             \$deleteLink.click(function(e) {
                 \$prototype.remove();
+
                 e.preventDefault(); // évite qu'un # apparaisse dans l'URL
                 return false;
             });

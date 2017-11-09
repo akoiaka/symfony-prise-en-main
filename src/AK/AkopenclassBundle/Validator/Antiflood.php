@@ -1,5 +1,5 @@
 <?php
-namespace AK\AkopenclassBundle\Validator;
+namespace AK\OpenclassBundle\Validator;
 use Symfony\Component\Validator\Constraint;
 /**
  * @Annotation
